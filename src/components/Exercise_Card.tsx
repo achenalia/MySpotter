@@ -2,13 +2,18 @@ import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { WebView } from "react-native-webview";
 import { BackButton } from "@/components/Back_Button";
+import { Tags } from "@/components/Tags";
 import { colors, spacing } from "@/constants/theme";
+import type { Difficulty, Specialty } from "@/data/content";
 
 type ExerciseCardProps = {
   name: string;
   description: string;
   /** A YouTube link (watch, youtu.be, shorts, or embed) or a bare video ID. */
   videoUrl: string;
+  time?: string;
+  difficulty?: Difficulty;
+  specialties?: Specialty[];
 };
 
 function getYouTubeId(url: string): string | null {
@@ -19,16 +24,27 @@ function getYouTubeId(url: string): string | null {
   return /^[\w-]{11}$/.test(url) ? url : null;
 }
 
-export function ExerciseCard({ name, description, videoUrl }: ExerciseCardProps) {
+export function ExerciseCard({
+  name,
+  description,
+  videoUrl,
+  time = "",
+  difficulty,
+  specialties = [],
+}: ExerciseCardProps) {
   const videoId = getYouTubeId(videoUrl);
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <BackButton />
-        <Text style={styles.name} numberOfLines={2}>
-          {name}
-        </Text>
+        <View style={styles.titleBlock}>
+          <Text style={styles.name} numberOfLines={2}>
+            {name}
+          </Text>
+          {time ? <Text style={styles.details}>{time}</Text> : null}
+          <Tags difficulty={difficulty} specialties={specialties} />
+        </View>
       </View>
 
       <ScrollView contentContainerStyle={styles.content}>
@@ -46,7 +62,7 @@ export function ExerciseCard({ name, description, videoUrl }: ExerciseCardProps)
           )}
         </View>
 
-        <Text style={styles.description}>{description}</Text>
+        {description ? <Text style={styles.description}>{description}</Text> : null}
       </ScrollView>
     </SafeAreaView>
   );
@@ -61,7 +77,9 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.sm,
     gap: spacing.sm,
   },
-  name: { flex: 1, fontSize: 24, fontWeight: "700", color: colors.text },
+  titleBlock: { flex: 1, gap: spacing.sm / 2 },
+  name: { fontSize: 24, fontWeight: "700", color: colors.text },
+  details: { fontSize: 14, color: colors.text, opacity: 0.6 },
   content: { padding: spacing.md, gap: spacing.md },
   video: {
     width: "100%",

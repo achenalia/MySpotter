@@ -7,20 +7,11 @@ import { Affirmation } from "@/components/Affirmation";
 import { StreakCounter } from "@/components/StreakCounter";
 import { useState } from "react";
 import { Directory } from "@/components/Directory";
-
-// RANDOMLY CHOOSES AFFIRMATION FROM THESE
-const affirmations = [
-  "I am capable of handling whatever today brings.",
-  "I am doing my best, and that is enough.",
-  "Small steps still move me forward.",
-];
-
-
+import { getRandomAffirmation } from "@/data/affirmations";
 
 export default function Home() {
-  const [affirmation] = useState(
-    () => affirmations[Math.floor(Math.random() * affirmations.length)]
-  );
+  // Picked once when the app launches; edit the list in src/data/affirmations.json.
+  const [affirmation] = useState(getRandomAffirmation);
 
 
   return (
@@ -28,7 +19,7 @@ export default function Home() {
       <ScrollView contentContainerStyle={styles.content}>
         <Text style={styles.heading}>Home</Text>
         <StreakCounter />
-        <Affirmation text={affirmation} />
+        {affirmation ? <Affirmation text={affirmation} /> : null}
         <Card title="Test">
           <Text>TEST CARD.</Text>
           <Button title="Get started" onPress={() => console.log("pressed")} />

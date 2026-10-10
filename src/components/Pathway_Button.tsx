@@ -1,10 +1,11 @@
 import { router } from "expo-router";
 import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Tags } from "@/components/Tags";
 import { colors, spacing } from "@/constants/theme";
-import { getPathway } from "@/data/pathways";
+import { getPathway } from "@/data/content";
 
 type PathwayButtonProps = {
-  /** The id of a pathway in src/data/pathways.ts. */
+  /** The id of a pathway in src/data/content.json. */
   id: string;
 };
 
@@ -22,7 +23,9 @@ export function PathwayButton({ id }: PathwayButtonProps) {
     <Pressable
       onPress={openPathway}
       accessibilityRole="button"
-      accessibilityLabel={`Open ${pathway.name}, ${time}, ${pathway.difficulty}`}
+      accessibilityLabel={[`Open ${pathway.name}`, time, pathway.difficulty, ...pathway.specialties]
+        .filter(Boolean)
+        .join(", ")}
       style={({ pressed }) => [styles.button, pressed && styles.pressed]}
     >
       <View style={styles.text}>
@@ -30,8 +33,9 @@ export function PathwayButton({ id }: PathwayButtonProps) {
           {pathway.name}
         </Text>
         <Text style={styles.details} numberOfLines={1}>
-          {time} · {pathway.difficulty}
+          {time}
         </Text>
+        <Tags difficulty={pathway.difficulty} specialties={pathway.specialties} />
       </View>
       <Text style={styles.chevron}>›</Text>
     </Pressable>
@@ -49,7 +53,7 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
   },
   pressed: { opacity: 0.7 },
-  text: { flex: 1, gap: 2 },
+  text: { flex: 1, gap: spacing.sm / 2 },
   name: { fontSize: 18, fontWeight: "600", color: colors.text },
   details: { fontSize: 14, color: colors.text, opacity: 0.6 },
   chevron: { fontSize: 24, color: colors.primary },

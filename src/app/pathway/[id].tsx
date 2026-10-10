@@ -3,8 +3,9 @@ import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { BackButton } from "@/components/Back_Button";
 import { ExerciseCalendar } from "@/components/Exercise_Calendar";
+import { Tags } from "@/components/Tags";
 import { colors, spacing } from "@/constants/theme";
-import { getPathway } from "@/data/pathways";
+import { getPathway } from "@/data/content";
 
 export default function PathwayScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -31,17 +32,14 @@ export default function PathwayScreen() {
       </View>
 
       <View style={styles.content}>
-        <Text style={styles.body}>{pathway.description}</Text>
+        {pathway.description ? <Text style={styles.body}>{pathway.description}</Text> : null}
 
         <View style={styles.details}>
           <Text style={styles.detail}>
             <Text style={styles.label}>Time: </Text>
             {pathway.days} {pathway.days === 1 ? "day" : "days"}
           </Text>
-          <Text style={styles.detail}>
-            <Text style={styles.label}>Difficulty: </Text>
-            {pathway.difficulty}
-          </Text>
+          <Tags difficulty={pathway.difficulty} specialties={pathway.specialties} />
         </View>
 
         <ExerciseCalendar rows={pathway.days} exerciseIds={pathway.exerciseIds} />

@@ -2,7 +2,7 @@ import { Stack, useLocalSearchParams } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 import { ExerciseCard } from "@/components/Exercise_Card";
 import { colors } from "@/constants/theme";
-import { getExercise } from "@/data/exercises";
+import { getExercise } from "@/data/content";
 
 export default function ExerciseScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -24,6 +24,9 @@ export default function ExerciseScreen() {
         name={exercise.name}
         description={exercise.description}
         videoUrl={exercise.videoUrl}
+        time={exercise.time}
+        difficulty={exercise.difficulty}
+        specialties={exercise.specialties}
       />
     </>
   );
