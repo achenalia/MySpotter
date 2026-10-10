@@ -1,17 +1,25 @@
-import { Text, View, StyleSheet } from "react-native";
+import { ScrollView, StyleSheet, Text } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Button } from "@/components/Button";
+import { Card } from "@/components/Card";
+import { colors, spacing } from "@/constants/theme";
 
-export default function Index() {
+export default function Home() {
   return (
-    <View style={styles.container}>
-      <Text>Edit src/app/index.tsx to edit this screen.</Text>
-    </View>
+    <SafeAreaView style={styles.safe}>
+      <ScrollView contentContainerStyle={styles.content}>
+        <Text style={styles.heading}>Home</Text>
+        <Card title="Welcome">
+          <Text>TEST CARD.</Text>
+          <Button title="Get started" onPress={() => console.log("pressed")} />
+        </Card>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
+  safe: { flex: 1, backgroundColor: colors.background },
+  content: { padding: spacing.md, gap: spacing.md },
+  heading: { fontSize: 28, fontWeight: "800", color: colors.text },
 });
