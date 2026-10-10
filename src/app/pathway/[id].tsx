@@ -1,8 +1,8 @@
-import { Stack, useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { BackButton } from "@/components/Back_Button";
 import { ExerciseCalendar } from "@/components/Exercise_Calendar";
+import { Sheet } from "@/components/Sheet";
 import { Tags } from "@/components/Tags";
 import { colors, spacing } from "@/constants/theme";
 import { getPathway } from "@/data/content";
@@ -13,38 +13,39 @@ export default function PathwayScreen() {
 
   if (!pathway) {
     return (
-      <View style={styles.notFound}>
-        <Stack.Screen options={{ title: "Not found" }} />
-        <Text style={styles.body}>Pathway not found.</Text>
-      </View>
+      <Sheet>
+        <View style={styles.notFound}>
+          <Text style={styles.body}>Pathway not found.</Text>
+        </View>
+      </Sheet>
     );
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Stack.Screen options={{ headerShown: false }} />
-
-      <View style={styles.header}>
-        <BackButton variant="close" />
-        <Text style={styles.name} numberOfLines={2}>
-          {pathway.name}
-        </Text>
-      </View>
-
-      <View style={styles.content}>
-        {pathway.description ? <Text style={styles.body}>{pathway.description}</Text> : null}
-
-        <View style={styles.details}>
-          <Text style={styles.detail}>
-            <Text style={styles.label}>Time: </Text>
-            {pathway.days} {pathway.days === 1 ? "day" : "days"}
+    <Sheet>
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <BackButton variant="close" />
+          <Text style={styles.name} numberOfLines={2}>
+            {pathway.name}
           </Text>
-          <Tags difficulty={pathway.difficulty} specialties={pathway.specialties} />
         </View>
 
-        <ExerciseCalendar rows={pathway.days} exerciseIds={pathway.exerciseIds} />
+        <View style={styles.content}>
+          {pathway.description ? <Text style={styles.body}>{pathway.description}</Text> : null}
+
+          <View style={styles.details}>
+            <Text style={styles.detail}>
+              <Text style={styles.label}>Time: </Text>
+              {pathway.days} {pathway.days === 1 ? "day" : "days"}
+            </Text>
+            <Tags difficulty={pathway.difficulty} specialties={pathway.specialties} />
+          </View>
+
+          <ExerciseCalendar rows={pathway.days} exerciseIds={pathway.exerciseIds} />
+        </View>
       </View>
-    </SafeAreaView>
+    </Sheet>
   );
 }
 

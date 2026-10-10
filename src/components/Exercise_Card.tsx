@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { WebView } from "react-native-webview";
 import { BackButton } from "@/components/Back_Button";
 import { Button } from "@/components/Button";
@@ -36,7 +35,7 @@ export function ExerciseCard({
   const [videoFailed, setVideoFailed] = useState(false);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.header}>
         <BackButton variant="close" />
         <Text style={styles.name} numberOfLines={2}>
@@ -66,7 +65,7 @@ export function ExerciseCard({
 
         <Button title="Continue" onPress={onContinue} />
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
 

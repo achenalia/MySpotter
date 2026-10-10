@@ -1,8 +1,8 @@
 import { router, useLocalSearchParams } from "expo-router";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { BackButton } from "@/components/Back_Button";
 import { Button } from "@/components/Button";
+import { Sheet } from "@/components/Sheet";
 import { colors, spacing } from "@/constants/theme";
 import { DEFAULT_SAFETY, getExercise } from "@/data/content";
 
@@ -17,22 +17,24 @@ export default function ExerciseSafetyScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <BackButton />
-        {/* Centered across the full width, independent of the back arrow. */}
-        <View style={styles.titleWrap} pointerEvents="none">
-          <Text style={styles.title} accessibilityRole="header">
-            ⚠️ SAFETY ⚠️
-          </Text>
+    <Sheet>
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <BackButton />
+          {/* Centered across the full width, independent of the back arrow. */}
+          <View style={styles.titleWrap} pointerEvents="none">
+            <Text style={styles.title} accessibilityRole="header">
+              ⚠️ SAFETY ⚠️
+            </Text>
+          </View>
         </View>
-      </View>
 
-      <ScrollView contentContainerStyle={styles.content}>
-        <Text style={styles.description}>{exercise?.safety ?? DEFAULT_SAFETY}</Text>
-        <Button title="Begin" onPress={begin} />
-      </ScrollView>
-    </SafeAreaView>
+        <ScrollView contentContainerStyle={styles.content}>
+          <Text style={styles.description}>{exercise?.safety ?? DEFAULT_SAFETY}</Text>
+          <Button title="Begin" onPress={begin} />
+        </ScrollView>
+      </View>
+    </Sheet>
   );
 }
 

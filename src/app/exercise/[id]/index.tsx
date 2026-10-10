@@ -1,6 +1,7 @@
-import { Stack, router, useLocalSearchParams } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 import { ExerciseCard } from "@/components/Exercise_Card";
+import { Sheet } from "@/components/Sheet";
 import { colors } from "@/constants/theme";
 import { getExercise } from "@/data/content";
 
@@ -10,16 +11,16 @@ export default function ExerciseScreen() {
 
   if (!exercise) {
     return (
-      <View style={styles.notFound}>
-        <Stack.Screen options={{ title: "Not found" }} />
-        <Text style={styles.notFoundText}>Exercise not found.</Text>
-      </View>
+      <Sheet>
+        <View style={styles.notFound}>
+          <Text style={styles.notFoundText}>Exercise not found.</Text>
+        </View>
+      </Sheet>
     );
   }
 
   return (
-    <>
-      <Stack.Screen options={{ headerShown: false }} />
+    <Sheet>
       <ExerciseCard
         name={exercise.name}
         description={exercise.description}
@@ -29,7 +30,7 @@ export default function ExerciseScreen() {
           router.push({ pathname: "/exercise/[id]/safety", params: { id: exercise.id } })
         }
       />
-    </>
+    </Sheet>
   );
 }
 
