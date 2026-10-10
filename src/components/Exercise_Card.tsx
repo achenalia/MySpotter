@@ -30,6 +30,7 @@ export function ExerciseCard({ exercise, onContinue }: ExerciseCardProps) {
     equipment,
     instructions,
     videoUrl,
+    videoLabel,
     sources,
     difficulty,
     specialties,
@@ -87,10 +88,10 @@ export function ExerciseCard({ exercise, onContinue }: ExerciseCardProps) {
           <Pressable
             onPress={() => WebBrowser.openBrowserAsync(videoUrl.trim())}
             accessibilityRole="link"
-            accessibilityLabel={`Watch a video of ${name}`}
+            accessibilityLabel={videoLabel || `Watch a video of ${name}`}
             style={({ pressed }) => pressed && styles.pressed}
           >
-            <Text style={styles.videoLink}>▶ Watch video</Text>
+            <Text style={styles.videoLink}>{videoLabel || "▶ Watch video"}</Text>
           </Pressable>
         ) : null}
 

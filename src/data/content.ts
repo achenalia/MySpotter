@@ -28,6 +28,8 @@ export type Exercise = {
   instructions: string[];
   /** Link to a video, opened in the browser. Blank if the exercise has no video. */
   videoUrl: string;
+  /** Text for the video link. Blank means the default "▶ Watch video". */
+  videoLabel: string;
   sources: Source[];
   /** Shown on the safety pop-up before starting. Falls back to DEFAULT_SAFETY if blank. */
   safety: string;
@@ -161,6 +163,7 @@ export const exercises: Exercise[] = dedupe(
         equipment: textList(entry.equipment),
         instructions: textList(entry.instructions),
         videoUrl: text(entry.videoUrl),
+        videoLabel: text(entry.videoLabel).trim(),
         sources: sourceList(entry.sources, owner),
         safety: text(entry.safety).trim() || DEFAULT_SAFETY,
         difficulty: difficultyTag(entry.difficulty, owner),

@@ -57,6 +57,31 @@
       "videoUrl": "https://www.youtube.com/watch?v=REPLACE_ME",
       "sources": [],
       "safety": "Keep your hips level and your neck in line with your spine. If your lower back starts to ache, drop to your knees or rest."
+    },
+    {
+      "name": "Stand on One Foot",
+      "category": "Balance",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors", "For Injury Recovery"],
+      "description": "A simple balance exercise where you hold yourself steady on one leg. It helps build the steadiness you need for everyday movements like walking and climbing stairs.",
+      "equipment": [
+        "Optional: a wall or sturdy chair for support. This modification is for seniors, people with injuries, or anyone who needs help balancing."
+      ],
+      "instructions": [
+        "Stand tall with your feet together. If you're using support, face a wall with your arms outstretched and your fingertips touching it, or hold the back of a sturdy chair.",
+        "Lift your left foot off the floor, keeping your hips level and a slight bend in your standing knee.",
+        "Hold for 5 to 10 seconds, then gently place your foot back on the floor.",
+        "Repeat with your right leg. Do 3 lifts on each side."
+      ],
+      "videoUrl": "https://www.nhs.uk/live-well/exercise/balance-exercises/",
+      "videoLabel": "See Photos",
+      "sources": [
+        {
+          "title": "NHS – Balance exercises",
+          "url": "https://www.nhs.uk/live-well/exercise/balance-exercises/"
+        }
+      ],
+      "safety": "Clear the space around you and keep a wall or sturdy chair within reach in case you lose your balance. Stop and rest if you feel dizzy or unsteady."
     }
   ],
   "pathways": [
