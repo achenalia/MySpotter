@@ -6,19 +6,29 @@ import content from "./content.json";
 
 export const DIFFICULTIES = ["Beginner", "Intermediate", "Advanced"] as const;
 export const SPECIALTIES = ["For Seniors", "For Injury Recovery"] as const;
+export const CATEGORIES = ["Balance", "Strength", "Flexibility", "Mobility", "Cardio"] as const;
 
 export const DEFAULT_SAFETY =
   "Move slowly and stay in control. Stop right away if you feel sharp pain, dizziness or shortness of breath. If you have an injury or medical condition, check with a healthcare professional before starting.";
 
 export type Difficulty = (typeof DIFFICULTIES)[number];
 export type Specialty = (typeof SPECIALTIES)[number];
+export type Category = (typeof CATEGORIES)[number];
+
+export type Source = { title: string; url: string };
 
 export type Exercise = {
   id: string;
   name: string;
+  category?: Category;
   description: string;
-  /** A YouTube link or video ID. Blank if the exercise has no video. */
+  /** Items needed. Empty means bodyweight only. */
+  equipment: string[];
+  /** Steps, in order. */
+  instructions: string[];
+  /** Link to a video, opened in the browser. Blank if the exercise has no video. */
   videoUrl: string;
+  sources: Source[];
   /** Shown on the safety pop-up before starting. Falls back to DEFAULT_SAFETY if blank. */
   safety: string;
   difficulty?: Difficulty;
@@ -76,6 +86,37 @@ function difficultyTag(value: unknown, owner: string): Difficulty | undefined {
   return match;
 }
 
+function categoryTag(value: unknown, owner: string): Category | undefined {
+  const raw = text(value);
+  if (!raw.trim()) return undefined;
+  const match = matchOption(CATEGORIES, raw);
+  if (!match) {
+    warn(`${owner}: "${raw}" is not a category (use ${CATEGORIES.join(", ")}).`);
+  }
+  return match;
+}
+
+/** A list of text items; a single string counts as a one-item list. Blanks are dropped. */
+function textList(value: unknown): string[] {
+  const raw = Array.isArray(value) ? value : [value];
+  return raw.map((item) => text(item).trim()).filter(Boolean);
+}
+
+function sourceList(value: unknown, owner: string): Source[] {
+  const raw = Array.isArray(value) ? value : value === undefined ? [] : [value];
+  const sources: Source[] = [];
+  for (const item of raw) {
+    const entry = typeof item === "string" ? { url: item } : ((item ?? {}) as RawEntry);
+    const url = text(entry.url).trim();
+    if (!/^https?:\/\//.test(url)) {
+      warn(`${owner}: source ${JSON.stringify(item)} needs a "url" starting with http:// or https://.`);
+      continue;
+    }
+    sources.push({ title: text(entry.title).trim() || url, url });
+  }
+  return sources;
+}
+
 function specialtyTags(value: unknown, owner: string): Specialty[] {
   const raw = Array.isArray(value) ? value : value === undefined ? [] : [value];
   const found = new Set<Specialty>();
@@ -111,8 +152,12 @@ export const exercises: Exercise[] = dedupe(
       return {
         id: toId(name),
         name,
+        category: categoryTag(entry.category, owner),
         description: text(entry.description),
+        equipment: textList(entry.equipment),
+        instructions: textList(entry.instructions),
         videoUrl: text(entry.videoUrl),
+        sources: sourceList(entry.sources, owner),
         safety: text(entry.safety).trim() || DEFAULT_SAFETY,
         difficulty: difficultyTag(entry.difficulty, owner),
         specialties: specialtyTags(entry.specialties, owner),

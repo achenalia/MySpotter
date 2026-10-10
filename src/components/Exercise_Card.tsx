@@ -1,67 +1,105 @@
-import { useState } from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { WebView } from "react-native-webview";
+import * as WebBrowser from "expo-web-browser";
+import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { BackButton } from "@/components/Back_Button";
 import { Button } from "@/components/Button";
 import { Tags } from "@/components/Tags";
 import { colors, spacing } from "@/constants/theme";
-import type { Difficulty } from "@/data/content";
+import type { Exercise } from "@/data/content";
 
 type ExerciseCardProps = {
-  name: string;
-  description: string;
-  /** A YouTube link (watch, youtu.be, shorts, or embed) or a bare video ID. */
-  videoUrl: string;
-  difficulty?: Difficulty;
+  exercise: Exercise;
   onContinue: () => void;
 };
 
-function getYouTubeId(url: string): string | null {
-  const match = url.match(
-    /(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([\w-]{11})/
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <View style={styles.section}>
+      <Text style={styles.sectionTitle} accessibilityRole="header">
+        {title}
+      </Text>
+      {children}
+    </View>
   );
-  if (match) return match[1];
-  return /^[\w-]{11}$/.test(url) ? url : null;
 }
 
-export function ExerciseCard({
-  name,
-  description,
-  videoUrl,
-  difficulty,
-  onContinue,
-}: ExerciseCardProps) {
-  const videoId = getYouTubeId(videoUrl);
-  const [videoFailed, setVideoFailed] = useState(false);
+export function ExerciseCard({ exercise, onContinue }: ExerciseCardProps) {
+  const { name, category, description, equipment, instructions, videoUrl, sources, difficulty } =
+    exercise;
+  const hasVideo = /^https?:\/\//.test(videoUrl.trim());
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <BackButton variant="close" />
-        <Text style={styles.name} numberOfLines={2}>
-          {name}
-        </Text>
+        <View style={styles.titleBlock}>
+          <Text style={styles.name} numberOfLines={2}>
+            {name}
+          </Text>
+          {category || difficulty ? (
+            <View style={styles.subtitleRow}>
+              {category ? <Text style={styles.category}>{category}</Text> : null}
+              <Tags difficulty={difficulty} />
+            </View>
+          ) : null}
+        </View>
       </View>
 
       <ScrollView contentContainerStyle={styles.content}>
-        {description ? <Text style={styles.description}>{description}</Text> : null}
+        {description ? (
+          <Section title="Description">
+            <Text style={styles.body}>{description}</Text>
+          </Section>
+        ) : null}
 
-        <Tags difficulty={difficulty} />
+        <Section title="Equipment">
+          {equipment.length > 0 ? (
+            equipment.map((item) => (
+              <View key={item} style={styles.listRow}>
+                <Text style={styles.bullet}>•</Text>
+                <Text style={styles.listText}>{item}</Text>
+              </View>
+            ))
+          ) : (
+            <Text style={styles.body}>Bodyweight</Text>
+          )}
+        </Section>
 
-        {/* Plain grey box when there's no video or it fails to load. */}
-        <View style={styles.video}>
-          {videoId && !videoFailed ? (
-            <WebView
-              source={{ uri: `https://www.youtube.com/embed/${videoId}?playsinline=1` }}
-              allowsInlineMediaPlayback
-              allowsFullscreenVideo
-              mediaPlaybackRequiresUserAction
-              onError={() => setVideoFailed(true)}
-              onHttpError={() => setVideoFailed(true)}
-              style={styles.webview}
-            />
-          ) : null}
-        </View>
+        {instructions.length > 0 ? (
+          <Section title="Instructions">
+            {instructions.map((step, i) => (
+              <View key={i} style={styles.listRow}>
+                <Text style={styles.stepNumber}>{i + 1}.</Text>
+                <Text style={styles.listText}>{step}</Text>
+              </View>
+            ))}
+          </Section>
+        ) : null}
+
+        {hasVideo ? (
+          <Pressable
+            onPress={() => WebBrowser.openBrowserAsync(videoUrl.trim())}
+            accessibilityRole="link"
+            accessibilityLabel={`Watch a video of ${name}`}
+            style={({ pressed }) => pressed && styles.pressed}
+          >
+            <Text style={styles.videoLink}>▶ Watch video</Text>
+          </Pressable>
+        ) : null}
+
+        {sources.length > 0 ? (
+          <Section title="Sources">
+            {sources.map((source) => (
+              <Pressable
+                key={source.url}
+                onPress={() => WebBrowser.openBrowserAsync(source.url)}
+                accessibilityRole="link"
+                style={({ pressed }) => pressed && styles.pressed}
+              >
+                <Text style={styles.link}>{source.title}</Text>
+              </Pressable>
+            ))}
+          </Section>
+        ) : null}
 
         <Button title="Continue" onPress={onContinue} />
       </ScrollView>
@@ -78,15 +116,19 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.sm,
     gap: spacing.sm,
   },
-  name: { flex: 1, fontSize: 24, fontWeight: "700", color: colors.text },
-  content: { padding: spacing.md, gap: spacing.md },
-  description: { fontSize: 16, lineHeight: 24, color: colors.text },
-  video: {
-    width: "100%",
-    aspectRatio: 16 / 9,
-    borderRadius: 12,
-    overflow: "hidden",
-    backgroundColor: colors.subtle,
-  },
-  webview: { width: "100%", height: "100%" },
+  titleBlock: { flex: 1, gap: spacing.xs },
+  name: { fontSize: 24, fontWeight: "700", color: colors.text },
+  subtitleRow: { flexDirection: "row", alignItems: "center", flexWrap: "wrap", gap: spacing.sm },
+  category: { fontSize: 15, fontWeight: "600", color: colors.muted },
+  content: { padding: spacing.md, gap: spacing.lg },
+  section: { gap: spacing.sm },
+  sectionTitle: { fontSize: 18, fontWeight: "700", color: colors.text },
+  body: { fontSize: 16, lineHeight: 24, color: colors.text },
+  listRow: { flexDirection: "row", gap: spacing.sm },
+  bullet: { fontSize: 16, lineHeight: 24, color: colors.text, width: 12 },
+  stepNumber: { fontSize: 16, lineHeight: 24, fontWeight: "700", color: colors.text, minWidth: 20 },
+  listText: { flex: 1, fontSize: 16, lineHeight: 24, color: colors.text },
+  videoLink: { fontSize: 17, fontWeight: "600", color: colors.primary, textDecorationLine: "underline" },
+  link: { fontSize: 15, lineHeight: 22, color: colors.primary, textDecorationLine: "underline" },
+  pressed: { opacity: 0.6 },
 });

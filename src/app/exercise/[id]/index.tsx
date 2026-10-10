@@ -22,10 +22,7 @@ export default function ExerciseScreen() {
   return (
     <Sheet>
       <ExerciseCard
-        name={exercise.name}
-        description={exercise.description}
-        videoUrl={exercise.videoUrl}
-        difficulty={exercise.difficulty}
+        exercise={exercise}
         onContinue={() =>
           router.push({ pathname: "/exercise/[id]/safety", params: { id: exercise.id } })
         }

@@ -2,17 +2,54 @@
   "exercises": [
     {
       "name": "Push-Up",
-      "description": "A bodyweight exercise that works the chest, shoulders and triceps. Keep your body in a straight line from head to heels and lower your chest toward the floor.",
-      "videoUrl": "https://www.youtube.com/watch?v=IODxDxX7oi4"
+      "category": "Strength",
+      "description": "A bodyweight exercise that works the chest, shoulders and triceps.",
+      "equipment": [],
+      "instructions": [
+        "Place your hands on the floor slightly wider than your shoulders.",
+        "Step your feet back so your body is in a straight line from head to heels.",
+        "Bend your elbows and lower your chest toward the floor.",
+        "Push back up until your arms are straight."
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=IODxDxX7oi4",
+      "sources": [
+        {
+          "title": "NHS – Strength exercises",
+          "url": "https://www.nhs.uk/live-well/exercise/strength-exercises/"
+        }
+      ]
     },
     {
       "name": "Squat",
-      "description": "A lower-body exercise that works the quads, glutes and hamstrings. Keep your chest up and push your hips back as you bend your knees."
+      "category": "Strength",
+      "description": "A lower-body exercise that works the quads, glutes and hamstrings.",
+      "equipment": [],
+      "instructions": [
+        "Stand with your feet hip-width apart.",
+        "Keep your chest up and push your hips back as you bend your knees.",
+        "Lower until your thighs are close to parallel with the floor, or as far as is comfortable.",
+        "Push through your heels to stand back up."
+      ],
+      "sources": [
+        {
+          "title": "NHS – Strength exercises",
+          "url": "https://www.nhs.uk/live-well/exercise/strength-exercises/"
+        }
+      ]
     },
     {
       "name": "Plank",
-      "description": "A core exercise that builds stability through the abs, back and shoulders. Rest on your forearms and toes and hold your body in a straight line without letting your hips sag.",
+      "category": "Strength",
+      "description": "A core exercise that builds stability through the abs, back and shoulders.",
+      "equipment": ["Exercise mat (optional)"],
+      "instructions": [
+        "Rest on your forearms with your elbows under your shoulders.",
+        "Step your feet back and lift your hips so your body forms a straight line.",
+        "Hold the position without letting your hips sag or lift.",
+        "Lower your knees to the floor to rest."
+      ],
       "videoUrl": "https://www.youtube.com/watch?v=REPLACE_ME",
+      "sources": [],
       "safety": "Keep your hips level and your neck in line with your spine. If your lower back starts to ache, drop to your knees or rest.",
       "difficulty": "Beginner",
       "specialties": ["For Seniors", "For Injury Recovery"]
