@@ -27,19 +27,14 @@ export default function Home() {
     <SafeAreaView style={styles.safe}>
       <ScrollView contentContainerStyle={styles.content}>
         <Text style={styles.heading}>Home</Text>
-        <StreakCounter />
         <Affirmation text={affirmation} />
-        <Card title="Test">
-          <Text>TEST CARD.</Text>
-          <Button title="Get started" onPress={() => console.log("pressed")} />
-        </Card>
       <Directory
         items={[
           {
             label: "Pose",
             href: "/pose"
           },
-                    {
+          {
             label: "Pathways",
             href: "/pathways"
           },
