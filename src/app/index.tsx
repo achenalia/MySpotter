@@ -118,12 +118,12 @@ export default function Home() {
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.shell}>
         <View style={styles.sidebar}>
-          <Text style={styles.title}>Find your rhythm</Text>
+          <Text style={styles.title}>MySpotter</Text>
 
           <TextInput
             value={search}
             onChangeText={setSearch}
-            placeholder="Search pathways or exercises"
+            placeholder="Search pathways or exercises."
             placeholderTextColor={colors.placeholder}
             style={styles.searchInput}
             autoCapitalize="none"
@@ -165,6 +165,12 @@ export default function Home() {
             </View>
           </View>
 
+          {hasFilters ? (
+            <Pressable onPress={clearFilters} style={styles.clearButton}>
+              <Text style={styles.clearButtonText}>Clear filters</Text>
+            </Pressable>
+          ) : null}
+
           <View style={styles.quickActions}>
             <Pressable
               onPress={() => router.push("/pose")}
@@ -181,12 +187,6 @@ export default function Home() {
               <Text style={styles.quickActionText}>Safety</Text>
             </Pressable>
           </View>
-
-          {hasFilters ? (
-            <Pressable onPress={clearFilters} style={styles.clearButton}>
-              <Text style={styles.clearButtonText}>Clear filters</Text>
-            </Pressable>
-          ) : null}
         </View>
 
         <ScrollView style={styles.contentArea} contentContainerStyle={styles.contentAreaInner}>
@@ -252,7 +252,7 @@ const styles = StyleSheet.create({
   sidebar: {
     width: 240,
     backgroundColor: colors.surface,
-    borderRadius: 24,
+    // borderRadius: 2,
     padding: spacing.md,
     gap: spacing.md,
     shadowColor: colors.black,
@@ -267,10 +267,10 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     backgroundColor: colors.panel,
-    borderRadius: 12,
+    borderRadius: 6,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
-    fontSize: 14,
+    fontSize: 12,
     color: colors.text,
     borderWidth: 1,
     borderColor: colors.outline,
@@ -329,7 +329,6 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
   clearButton: {
-    marginTop: "auto",
     backgroundColor: colors.overlay,
     borderRadius: 12,
     paddingVertical: spacing.sm,
