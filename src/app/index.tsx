@@ -36,16 +36,12 @@ export default function Home() {
       <Directory
         items={[
           {
-            label: "Settings",
-            href: "/settings"
+            label: "Pose",
+            href: "/pose"
           },
                     {
             label: "Pathways",
             href: "/pathways"
-          },
-          {
-            label: "About",
-            href: "/about"
           },
         ]}
       />
