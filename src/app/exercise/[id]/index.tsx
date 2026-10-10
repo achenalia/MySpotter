@@ -1,4 +1,4 @@
-import { Stack, useLocalSearchParams } from "expo-router";
+import { Stack, router, useLocalSearchParams } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 import { ExerciseCard } from "@/components/Exercise_Card";
 import { colors } from "@/constants/theme";
@@ -24,9 +24,10 @@ export default function ExerciseScreen() {
         name={exercise.name}
         description={exercise.description}
         videoUrl={exercise.videoUrl}
-        time={exercise.time}
         difficulty={exercise.difficulty}
-        specialties={exercise.specialties}
+        onContinue={() =>
+          router.push({ pathname: "/exercise/[id]/safety", params: { id: exercise.id } })
+        }
       />
     </>
   );

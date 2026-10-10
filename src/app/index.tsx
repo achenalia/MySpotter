@@ -216,7 +216,7 @@ export default function Home() {
                 <ContentCard
                   key={exercise.id}
                   title={exercise.name}
-                  subtitle={exercise.time || "Bodyweight"}
+                  subtitle="Bodyweight"
                   typeLabel="Exercise"
                   difficulty={exercise.difficulty}
                   specialties={exercise.specialties}

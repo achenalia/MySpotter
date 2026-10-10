@@ -18,9 +18,17 @@ import {
   type VoiceOption,
 } from "@/components/pose/useSpokenFeedback";
 import { colors } from "@/constants/theme";
+import { useLocalSearchParams } from "expo-router";
+
+// Matches app exercise ids ("push-up") to pose ids ("pushup"); unknown ones use the default.
+const findPoseExercise = (id?: string) => {
+  const key = id?.toLowerCase().replace(/[^a-z0-9]/g, "");
+  return exercises.find((e) => e.id.replace(/[^a-z0-9]/g, "") === key) ?? exercises[0];
+};
 
 export default function PoseTest() {
-  const [exercise, setExercise] = useState<Exercise>(exercises[0]);
+  const { exercise: exerciseParam } = useLocalSearchParams<{ exercise?: string }>();
+  const [exercise, setExercise] = useState<Exercise>(() => findPoseExercise(exerciseParam));
   const [state, setState] = useState<ExerciseState>(initialState);
   const [voiceOn, setVoiceOn] = useState(false);
   const [showVoices, setShowVoices] = useState(false);
@@ -31,7 +39,7 @@ export default function PoseTest() {
   useSpokenFeedback(state, voiceOn);
 
   const analyzerRef = useRef<Analyzer | null>(null);
-  if (!analyzerRef.current) analyzerRef.current = createAnalyzer(exercises[0]);
+  if (analyzerRef.current == null) analyzerRef.current = createAnalyzer(exercise);
 
   const selectExercise = (ex: Exercise) => {
     setExercise(ex);

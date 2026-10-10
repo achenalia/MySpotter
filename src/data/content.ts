@@ -7,6 +7,9 @@ import content from "./content.json";
 export const DIFFICULTIES = ["Beginner", "Intermediate", "Advanced"] as const;
 export const SPECIALTIES = ["For Seniors", "For Injury Recovery"] as const;
 
+export const DEFAULT_SAFETY =
+  "Move slowly and stay in control. Stop right away if you feel sharp pain, dizziness or shortness of breath. If you have an injury or medical condition, check with a healthcare professional before starting.";
+
 export type Difficulty = (typeof DIFFICULTIES)[number];
 export type Specialty = (typeof SPECIALTIES)[number];
 
@@ -16,8 +19,8 @@ export type Exercise = {
   description: string;
   /** A YouTube link or video ID. Blank if the exercise has no video. */
   videoUrl: string;
-  /** Free text, e.g. "24 Days" or "1 Month". */
-  time: string;
+  /** Shown on the safety pop-up before starting. Falls back to DEFAULT_SAFETY if blank. */
+  safety: string;
   difficulty?: Difficulty;
   specialties: Specialty[];
 };
@@ -110,7 +113,7 @@ export const exercises: Exercise[] = dedupe(
         name,
         description: text(entry.description),
         videoUrl: text(entry.videoUrl),
-        time: text(entry.time),
+        safety: text(entry.safety).trim() || DEFAULT_SAFETY,
         difficulty: difficultyTag(entry.difficulty, owner),
         specialties: specialtyTags(entry.specialties, owner),
       };

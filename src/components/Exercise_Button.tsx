@@ -21,21 +21,14 @@ export function ExerciseButton({ id }: ExerciseButtonProps) {
     <Pressable
       onPress={openExercise}
       accessibilityRole="button"
-      accessibilityLabel={[`Open ${exercise.name}`, exercise.time, exercise.difficulty, ...exercise.specialties]
-        .filter(Boolean)
-        .join(", ")}
+      accessibilityLabel={[`Open ${exercise.name}`, exercise.difficulty].filter(Boolean).join(", ")}
       style={({ pressed }) => [styles.button, pressed && styles.pressed]}
     >
       <View style={styles.text}>
         <Text style={styles.name} numberOfLines={1}>
           {exercise.name}
         </Text>
-        {exercise.time ? (
-          <Text style={styles.details} numberOfLines={1}>
-            {exercise.time}
-          </Text>
-        ) : null}
-        <Tags difficulty={exercise.difficulty} specialties={exercise.specialties} />
+        <Tags difficulty={exercise.difficulty} />
       </View>
       <Text style={styles.chevron}>›</Text>
     </Pressable>
@@ -55,6 +48,5 @@ const styles = StyleSheet.create({
   pressed: { opacity: 0.7 },
   text: { flex: 1, gap: spacing.sm / 2 },
   name: { fontSize: 18, fontWeight: "600", color: colors.text },
-  details: { fontSize: 14, color: colors.text, opacity: 0.6 },
   chevron: { fontSize: 24, color: colors.primary },
 });

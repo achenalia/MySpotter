@@ -25,7 +25,7 @@ export default function PathwayScreen() {
       <Stack.Screen options={{ headerShown: false }} />
 
       <View style={styles.header}>
-        <BackButton />
+        <BackButton variant="close" />
         <Text style={styles.name} numberOfLines={2}>
           {pathway.name}
         </Text>
