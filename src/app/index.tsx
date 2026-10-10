@@ -39,6 +39,10 @@ export default function Home() {
             label: "Settings",
             href: "/settings"
           },
+                    {
+            label: "Pathways",
+            href: "/pathways"
+          },
           {
             label: "About",
             href: "/about"
