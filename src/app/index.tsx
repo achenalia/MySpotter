@@ -3,16 +3,48 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { colors, spacing } from "@/constants/theme";
+import { Affirmation } from "@/components/Affirmation";
+import { StreakCounter } from "@/components/StreakCounter";
+import { useState } from "react";
+import { Directory } from "@/components/Directory";
+
+// RANDOMLY CHOOSES AFFIRMATION FROM THESE
+const affirmations = [
+  "I am capable of handling whatever today brings.",
+  "I am doing my best, and that is enough.",
+  "Small steps still move me forward.",
+];
+
+
 
 export default function Home() {
+  const [affirmation] = useState(
+    () => affirmations[Math.floor(Math.random() * affirmations.length)]
+  );
+
+
   return (
     <SafeAreaView style={styles.safe}>
       <ScrollView contentContainerStyle={styles.content}>
         <Text style={styles.heading}>Home</Text>
-        <Card title="Welcome">
+        <StreakCounter />
+        <Affirmation text={affirmation} />
+        <Card title="Test">
           <Text>TEST CARD.</Text>
           <Button title="Get started" onPress={() => console.log("pressed")} />
         </Card>
+      <Directory
+        items={[
+          {
+            label: "Settings",
+            href: "/settings"
+          },
+          {
+            label: "About",
+            href: "/about"
+          },
+        ]}
+      />
       </ScrollView>
     </SafeAreaView>
   );
