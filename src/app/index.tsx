@@ -1,13 +1,13 @@
-import { ScrollView, StyleSheet, Text } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { Affirmation } from "@/components/Affirmation";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
-import { colors, spacing } from "@/constants/theme";
-import { Affirmation } from "@/components/Affirmation";
-import { StreakCounter } from "@/components/StreakCounter";
-import { useState } from "react";
 import { Directory } from "@/components/Directory";
+import { StreakCounter } from "@/components/StreakCounter";
+import { colors, spacing } from "@/constants/theme";
 import { getRandomAffirmation } from "@/data/affirmations";
+import { useState } from "react";
+import { ScrollView, StyleSheet, Text } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Home() {
   // Picked once when the app launches; edit the list in src/data/affirmations.json.
@@ -27,16 +27,12 @@ export default function Home() {
       <Directory
         items={[
           {
-            label: "Settings",
-            href: "/settings"
-          },
-                    {
-            label: "Pathways",
-            href: "/pathways"
+            label: "Pose",
+            href: "/pose"
           },
           {
-            label: "About",
-            href: "/about"
+            label: "Pathways",
+            href: "/pathways"
           },
         ]}
       />
