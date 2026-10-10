@@ -23,7 +23,7 @@ export function PathwayButton({ id }: PathwayButtonProps) {
     <Pressable
       onPress={openPathway}
       accessibilityRole="button"
-      accessibilityLabel={[`Open ${pathway.name}`, time, pathway.difficulty, ...pathway.specialties]
+      accessibilityLabel={[`Open ${pathway.name}`, time, ...pathway.categories, pathway.difficulty, ...pathway.specialties]
         .filter(Boolean)
         .join(", ")}
       style={({ pressed }) => [styles.button, pressed && styles.pressed]}
@@ -35,7 +35,11 @@ export function PathwayButton({ id }: PathwayButtonProps) {
         <Text style={styles.details} numberOfLines={1}>
           {time}
         </Text>
-        <Tags difficulty={pathway.difficulty} specialties={pathway.specialties} />
+        <Tags
+          categories={pathway.categories}
+          difficulty={pathway.difficulty}
+          specialties={pathway.specialties}
+        />
       </View>
       <Text style={styles.chevron}>›</Text>
     </Pressable>

@@ -1,7 +1,8 @@
 // Loads exercises and pathways from content.json. Only `name` is required;
 // every other field falls back to a blank placeholder. Ids are generated from
-// names ("Push-Up" -> "push-up"), and pathway schedules list exercise names,
-// with "rest" for rest days. Tags must be one of the options below.
+// names ("Push-Up" -> "push-up"). Each day in a pathway schedule is an
+// exercise name, a list of names for several exercises that day, or "rest".
+// Tags must be one of the options below.
 import content from "./content.json";
 
 export const DIFFICULTIES = ["Beginner", "Intermediate", "Advanced"] as const;
@@ -28,6 +29,8 @@ export type Exercise = {
   instructions: string[];
   /** Link to a video, opened in the browser. Blank if the exercise has no video. */
   videoUrl: string;
+  /** Text for the video link. Blank means the default "▶ Watch video". */
+  videoLabel: string;
   sources: Source[];
   /** Shown on the safety pop-up before starting. Falls back to DEFAULT_SAFETY if blank. */
   safety: string;
@@ -41,10 +44,22 @@ export type Pathway = {
   description: string;
   /** Total length in days, taken from the schedule. */
   days: number;
+  /** The pathway's own difficulty, or else its hardest exercise's. */
   difficulty?: Difficulty;
+  /** Every category among its exercises. */
+  categories: Category[];
+  /** Its own specialties, plus any that every one of its exercises has. */
   specialties: Specialty[];
-  /** Exercise id for each day. Undefined means a rest day. */
-  exerciseIds: (string | undefined)[];
+  /** Exercise ids for each day. An empty list means a rest day. */
+  exerciseIds: string[][];
+  /** Optional swap (e.g. for a back injury): replaces every session's exercises when turned on. */
+  alternative?: PathwayAlternative;
+};
+
+export type PathwayAlternative = {
+  /** Button text, e.g. "Back injury alternatives". */
+  label: string;
+  exerciseIds: string[];
 };
 
 type RawEntry = Record<string, unknown>;
@@ -157,6 +172,7 @@ export const exercises: Exercise[] = dedupe(
         equipment: textList(entry.equipment),
         instructions: textList(entry.instructions),
         videoUrl: text(entry.videoUrl),
+        videoLabel: text(entry.videoLabel).trim(),
         sources: sourceList(entry.sources, owner),
         safety: text(entry.safety).trim() || DEFAULT_SAFETY,
         difficulty: difficultyTag(entry.difficulty, owner),
@@ -167,6 +183,40 @@ export const exercises: Exercise[] = dedupe(
 );
 
 const exerciseIds = new Set(exercises.map((exercise) => exercise.id));
+const exercisesById = new Map(exercises.map((exercise) => [exercise.id, exercise]));
+
+/** Tags a pathway picks up from the exercises in its schedule. */
+function tagsFromExercises(days: string[][]) {
+  const included = [...new Set(days.flat())]
+    .map((id) => exercisesById.get(id))
+    .filter((exercise): exercise is Exercise => !!exercise);
+
+  const categories = CATEGORIES.filter((category) =>
+    included.some((exercise) => exercise.category === category)
+  );
+  const sharedSpecialties = SPECIALTIES.filter(
+    (specialty) =>
+      included.length > 0 && included.every((exercise) => exercise.specialties.includes(specialty))
+  );
+  const hardest = [...DIFFICULTIES]
+    .reverse()
+    .find((level) => included.some((exercise) => exercise.difficulty === level));
+
+  return { categories, sharedSpecialties, hardest };
+}
+
+/** Reads a pathway's "alternatives": { "label": "...", "exercises": ["Exercise name", ...] }. */
+function alternativeFor(value: unknown, owner: string): PathwayAlternative | undefined {
+  if (!value || typeof value !== "object") return undefined;
+  const entry = value as RawEntry;
+  const exerciseIdsForSwap = textList(entry.exercises).map((exerciseName) => {
+    const id = toId(exerciseName);
+    if (!exerciseIds.has(id)) warn(`${owner} alternatives: no exercise named "${exerciseName}".`);
+    return id;
+  });
+  if (exerciseIdsForSwap.length === 0) return undefined;
+  return { label: text(entry.label).trim() || "Alternatives", exerciseIds: exerciseIdsForSwap };
+}
 
 export const pathways: Pathway[] = dedupe(
   rawPathways
@@ -174,23 +224,34 @@ export const pathways: Pathway[] = dedupe(
     .map((entry) => {
       const name = entry.name.trim();
       const schedule = Array.isArray(entry.schedule) ? entry.schedule : [];
-      const ids = schedule.map((day, i) => {
-        const dayName = text(day).trim();
-        if (!dayName || dayName.toLowerCase() === "rest") return undefined;
-        const id = toId(dayName);
-        if (!exerciseIds.has(id)) {
-          warn(`Pathway "${name}" day ${i + 1}: no exercise named "${dayName}".`);
-        }
-        return id;
-      });
+      const ids = schedule.map((day, i) =>
+        textList(day)
+          .filter((dayName) => dayName.toLowerCase() !== "rest")
+          .map((dayName) => {
+            const id = toId(dayName);
+            if (!exerciseIds.has(id)) {
+              warn(`Pathway "${name}" day ${i + 1}: no exercise named "${dayName}".`);
+            }
+            return id;
+          })
+      );
+      const owner = `Pathway "${name}"`;
+      const fromExercises = tagsFromExercises(ids);
+      const ownSpecialties = specialtyTags(entry.specialties, owner);
+      const alternative = alternativeFor(entry.alternatives, owner);
       return {
         id: toId(name),
         name,
         description: text(entry.description),
         days: ids.length,
-        difficulty: difficultyTag(entry.difficulty, `Pathway "${name}"`),
-        specialties: specialtyTags(entry.specialties, `Pathway "${name}"`),
+        difficulty: difficultyTag(entry.difficulty, owner) ?? fromExercises.hardest,
+        categories: fromExercises.categories,
+        specialties: SPECIALTIES.filter(
+          (specialty) =>
+            ownSpecialties.includes(specialty) || fromExercises.sharedSpecialties.includes(specialty)
+        ),
         exerciseIds: ids,
+        alternative,
       };
     }),
   "pathway"

@@ -7,11 +7,18 @@ type ExerciseCalendarProps = {
   rows: number;
   /** Height of the scrollable window, in points. Fills the available space if omitted. */
   height?: number;
-  /** Exercise id for each day, by row index. Days without one are left empty. */
-  exerciseIds?: (string | undefined)[];
+  /** Exercise ids for each day, by row index. Days without any are left empty. */
+  exerciseIds?: string[][];
+  /** Shown at the top right of the calendar's header row, e.g. a toggle button. */
+  headerAction?: React.ReactNode;
 };
 
-export function ExerciseCalendar({ rows, height, exerciseIds = [] }: ExerciseCalendarProps) {
+export function ExerciseCalendar({
+  rows,
+  height,
+  exerciseIds = [],
+  headerAction,
+}: ExerciseCalendarProps) {
   const days = Array.from({ length: Math.max(0, rows) }, (_, i) => i);
 
   return (
@@ -19,17 +26,18 @@ export function ExerciseCalendar({ rows, height, exerciseIds = [] }: ExerciseCal
       <View style={[styles.row, styles.headerRow]}>
         <Text style={[styles.dayCell, styles.headerText]}>Day</Text>
         <Text style={[styles.exerciseCell, styles.headerText]}>Exercise</Text>
+        {headerAction}
       </View>
 
       <ScrollView nestedScrollEnabled>
         {days.map((i) => {
-          const exerciseId = exerciseIds[i];
+          const dayExercises = exerciseIds[i] ?? [];
           return (
             <View key={i} style={[styles.row, i < rows - 1 && styles.divider]}>
               <Text style={[styles.dayCell, styles.dayText]}>{i + 1}</Text>
               <View style={styles.exerciseCell}>
-                {exerciseId ? (
-                  <ExerciseButton id={exerciseId} />
+                {dayExercises.length > 0 ? (
+                  dayExercises.map((id, j) => <ExerciseButton key={`${id}-${j}`} id={id} />)
                 ) : (
                   <Text style={styles.emptyText}>—</Text>
                 )}
@@ -63,6 +71,6 @@ const styles = StyleSheet.create({
   divider: { borderBottomWidth: 1, borderBottomColor: colors.surface },
   dayCell: { width: 48 },
   dayText: { fontSize: 16, fontWeight: "600", color: colors.text },
-  exerciseCell: { flex: 1 },
+  exerciseCell: { flex: 1, gap: spacing.sm },
   emptyText: { fontSize: 16, color: colors.text, opacity: 0.4 },
 });

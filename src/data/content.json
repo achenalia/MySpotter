@@ -3,6 +3,8 @@
     {
       "name": "Push-Up",
       "category": "Strength",
+      "difficulty": "Intermediate",
+      "specialties": [],
       "description": "A bodyweight exercise that works the chest, shoulders and triceps.",
       "equipment": [],
       "instructions": [
@@ -22,6 +24,8 @@
     {
       "name": "Squat",
       "category": "Strength",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors"],
       "description": "A lower-body exercise that works the quads, glutes and hamstrings.",
       "equipment": [],
       "instructions": [
@@ -40,6 +44,8 @@
     {
       "name": "Plank",
       "category": "Strength",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors", "For Injury Recovery"],
       "description": "A core exercise that builds stability through the abs, back and shoulders.",
       "equipment": ["Exercise mat (optional)"],
       "instructions": [
@@ -50,9 +56,765 @@
       ],
       "videoUrl": "https://www.youtube.com/watch?v=REPLACE_ME",
       "sources": [],
-      "safety": "Keep your hips level and your neck in line with your spine. If your lower back starts to ache, drop to your knees or rest.",
+      "safety": "Keep your hips level and your neck in line with your spine. If your lower back starts to ache, drop to your knees or rest."
+    },
+    {
+      "name": "Stand on One Foot",
+      "category": "Balance",
       "difficulty": "Beginner",
-      "specialties": ["For Seniors", "For Injury Recovery"]
+      "specialties": ["For Seniors", "For Injury Recovery"],
+      "description": "A simple balance exercise where you hold yourself steady on one leg. It helps build the steadiness you need for everyday movements like walking and climbing stairs.",
+      "equipment": [
+        "Optional: a wall or sturdy chair for support. This modification is for seniors, people with injuries, or anyone who needs help balancing."
+      ],
+      "instructions": [
+        "Stand tall with your feet together. If you're using support, face a wall with your arms outstretched and your fingertips touching it, or hold the back of a sturdy chair.",
+        "Lift your left foot off the floor, keeping your hips level and a slight bend in your standing knee.",
+        "Hold for 5 to 10 seconds, then gently place your foot back on the floor.",
+        "Repeat with your right leg. Do 3 lifts on each side."
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=QT5d4tTXW6U",
+      "sources": [
+        {
+          "title": "NHS – Balance exercises",
+          "url": "https://www.nhs.uk/live-well/exercise/balance-exercises/"
+        },
+        {
+          "title": "National Institute on Aging – Stand on One Foot Balance Exercise for Older Adults (video)",
+          "url": "https://www.youtube.com/watch?v=QT5d4tTXW6U"
+        }
+      ],
+      "safety": "Clear the space around you and keep a wall or sturdy chair within reach in case you lose your balance. Stop and rest if you feel dizzy or unsteady."
+    },
+    {
+      "name": "Heel-to-Toe Walk",
+      "category": "Balance",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors"],
+      "description": "A balance exercise where you walk in a straight line, placing the heel of one foot directly in front of the toes of the other. It helps you stay steady while walking.",
+      "equipment": [
+        "Optional: a wall for support. This modification is for seniors, people with injuries, or anyone who needs help balancing."
+      ],
+      "instructions": [
+        "Stand tall with a clear, straight path in front of you. If you're using support, stand beside a wall and rest your fingertips against it for stability.",
+        "Place your right heel on the floor directly in front of your left toes.",
+        "Then do the same with your left heel, placing it directly in front of your right toes.",
+        "Keep looking forward the whole time and try to take at least 5 steps.",
+        "As you get steadier, move away from the wall."
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=z_GKdFf3qv4&t=30s",
+      "sources": [
+        {
+          "title": "NHS – Balance exercises",
+          "url": "https://www.nhs.uk/live-well/exercise/balance-exercises/"
+        },
+        {
+          "title": "National Institute on Aging – Heel-to-Toe Walk Balance Exercise for Older Adults (video)",
+          "url": "https://www.youtube.com/watch?v=z_GKdFf3qv4"
+        }
+      ],
+      "safety": "Walk along a clear, flat path with a wall within reach in case you lose your balance. Go slowly, and stop and rest if you feel dizzy or unsteady."
+    },
+    {
+      "name": "Wall Push-Ups",
+      "category": "Strength",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors"],
+      "description": "A gentle, standing version of a push-up done against a wall. It strengthens your arms, shoulders, and chest, which helps with everyday pushing and lifting tasks.",
+      "equipment": ["A clear section of wall"],
+      "instructions": [
+        "Face a wall, standing a little farther than arm's length away, with your feet shoulder-width apart.",
+        "Lean forward and put your palms flat against the wall at shoulder height and shoulder-width apart.",
+        "Breathe in as you slowly bend your elbows and lower your upper body toward the wall. Keep your feet flat on the floor.",
+        "Hold the position for 1 second.",
+        "Breathe out as you slowly push yourself back until your arms are straight.",
+        "Repeat 10-15 times. Rest, then do another 10-15 if you feel able."
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=751E9kAdkwg",
+      "sources": [
+        {
+          "title": "National Institute on Aging – Exercise & Physical Activity: Your Everyday Guide (PDF, hosted by University of Missouri Geriatric Toolkit)",
+          "url": "https://geriatrictoolkit.missouri.edu/consumer/Exercise_and_Physical_ActivityYour_Everyday_Guide_from_The_NIA.pdf"
+        },
+        {
+          "title": "National Institute on Aging – Workout to Go: A Sample Exercise Routine (PDF, via govinfo.gov)",
+          "url": "https://www.govinfo.gov/content/pkg/GOVPUB-HE20-PURL-gpo62941/pdf/GOVPUB-HE20-PURL-gpo62941.pdf"
+        },
+        {
+          "title": "National Institute on Aging – Three Types of Exercise Can Improve Your Health and Physical Ability",
+          "url": "https://www.nia.nih.gov/health/exercise-and-physical-activity/three-types-exercise-can-improve-your-health-and-physical"
+        },
+        {
+          "title": "National Institute on Aging – Wall Pushups Strength Exercise for Older Adults (video)",
+          "url": "https://www.youtube.com/watch?v=751E9kAdkwg"
+        }
+      ],
+      "safety": "Move slowly and smoothly, breathe out as you push, and don't hold your breath or lock your elbows. Stop if you feel pain, and check with your doctor first if you have shoulder, elbow, or wrist problems."
+    },
+    {
+      "name": "Overhead Arm Raise",
+      "category": "Strength",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors"],
+      "description": "Raising light weights from shoulder height up over your head, standing or seated. It strengthens your shoulders and arms, making it easier to lift things and reach up to high shelves.",
+      "equipment": [
+        "Light hand weights, or household items like soup cans or water bottles. Beginners can start with no weight until the movement feels comfortable.",
+        "Optional: a sturdy chair without arms, to do the exercise seated. This modification is for seniors, people with injuries, or anyone who needs help balancing."
+      ],
+      "instructions": [
+        "Stand, or sit in a sturdy armless chair, with your feet flat on the floor, shoulder-width apart.",
+        "Hold the weights at your sides at shoulder height, palms facing forward. Breathe in slowly.",
+        "Breathe out as you slowly raise both arms up over your head, keeping your elbows slightly bent.",
+        "Hold the position for 1 second.",
+        "Breathe in as you slowly lower your arms.",
+        "Repeat 10-15 times. Rest, then do another 10-15 if you feel able. As it gets easier, try a slightly heavier weight."
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=VPiawRHRpmY",
+      "sources": [
+        {
+          "title": "National Institute on Aging – Exercise & Physical Activity: Your Everyday Guide (PDF, hosted by University of Missouri Geriatric Toolkit)",
+          "url": "https://geriatrictoolkit.missouri.edu/consumer/Exercise_and_Physical_ActivityYour_Everyday_Guide_from_The_NIA.pdf"
+        },
+        {
+          "title": "National Institute on Aging – Workout to Go: A Sample Exercise Routine (PDF, via govinfo.gov)",
+          "url": "https://www.govinfo.gov/content/pkg/GOVPUB-HE20-PURL-gpo62941/pdf/GOVPUB-HE20-PURL-gpo62941.pdf"
+        },
+        {
+          "title": "National Institute on Aging – Three Types of Exercise Can Improve Your Health and Physical Ability",
+          "url": "https://www.nia.nih.gov/health/exercise-and-physical-activity/three-types-exercise-can-improve-your-health-and-physical"
+        },
+        {
+          "title": "National Institute on Aging – Overhead Arm Raise Strength Exercise for Older Adults (video)",
+          "url": "https://www.youtube.com/watch?v=VPiawRHRpmY"
+        }
+      ],
+      "safety": "Use smooth, steady movements and never jerk or swing the weights into place; keep your elbows slightly bent rather than locked, and breathe out as you lift. Stop if you feel pain, and talk with your doctor first if you have shoulder problems."
+    },
+    {
+      "name": "Chair Dip",
+      "category": "Strength",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors"],
+      "description": "Using the armrests of a sturdy chair to slowly push your body up off the seat. It strengthens the muscles in your arms, which helps with getting up out of a chair.",
+      "equipment": ["A sturdy chair with armrests"],
+      "instructions": [
+        "Sit in a sturdy chair with armrests, with your feet flat on the floor, shoulder-width apart.",
+        "Lean slightly forward, keeping your back and shoulders straight.",
+        "Grip the arms of the chair with your hands next to you. Breathe in slowly.",
+        "Breathe out and use your arms to slowly push your body up off the chair. Hold for 1 second.",
+        "Breathe in as you slowly lower yourself back down into the seat.",
+        "Repeat 10-15 times. Rest, then do another 10-15 if you feel able. Pushing still strengthens your arms even if you can't lift yourself all the way off the chair."
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=LVRcXDEdC5U",
+      "sources": [
+        {
+          "title": "National Institute on Aging – Exercise & Physical Activity: Your Everyday Guide (PDF, hosted by University of Missouri Geriatric Toolkit)",
+          "url": "https://geriatrictoolkit.missouri.edu/consumer/Exercise_and_Physical_ActivityYour_Everyday_Guide_from_The_NIA.pdf"
+        },
+        {
+          "title": "ColumbiaDoctors (Columbia University) – Chair Push-Up",
+          "url": "https://www.columbiadoctors.org/health-library/multimedia/chair-push/"
+        },
+        {
+          "title": "National Institute on Aging – Three Types of Exercise Can Improve Your Health and Physical Ability",
+          "url": "https://www.nia.nih.gov/health/exercise-and-physical-activity/three-types-exercise-can-improve-your-health-and-physical"
+        },
+        {
+          "title": "National Institute on Aging – Chair Dip Strength Exercise for Older Adults (video)",
+          "url": "https://www.youtube.com/watch?v=LVRcXDEdC5U"
+        }
+      ],
+      "safety": "Make sure the chair is stable and won't slide or tip, and lower yourself slowly instead of dropping into the seat. Breathe out as you push, don't hold your breath, and stop if you feel pain in your shoulders, elbows, or wrists."
+    },
+    {
+      "name": "Pendulum Swings",
+      "category": "Mobility",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors", "For Injury Recovery"],
+      "description": "A very gentle shoulder exercise where you lean on a table and let your arm hang and swing like a clock pendulum. It is often used after a shoulder injury or surgery to ease stiffness and keep the shoulder moving.",
+      "equipment": ["A sturdy table, kitchen counter, or work top to lean on with your good arm"],
+      "instructions": [
+        "Stand beside a sturdy table or counter with your feet apart for better balance.",
+        "Lean forward and support yourself by placing your good hand on the table. Don't round your back or lock your knees.",
+        "Let your affected arm hang down, loose and relaxed.",
+        "Gently let the arm swing forward and back, like a clock pendulum. Rocking your body weight slightly helps it move, so the arm swings freely instead of being lifted by your shoulder muscles.",
+        "Next, swing the arm gently side to side, then in small circles one way and then the other way.",
+        "Repeat about 10 times in each direction, or as comfort allows."
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=zY5nq68IxwA",
+      "sources": [
+        {
+          "title": "AAOS OrthoInfo – Rotator Cuff and Shoulder Conditioning Program",
+          "url": "https://orthoinfo.aaos.org/en/recovery/rotator-cuff-and-shoulder-conditioning-program/"
+        },
+        {
+          "title": "Sherwood Forest Hospitals NHS Foundation Trust – Shoulder Range of Motion Exercises (PDF)",
+          "url": "https://www.sfh-tr.nhs.uk/media/0romp4a3/pil202509-04-srme-shoulder-range-of-movement-exercises.pdf"
+        },
+        {
+          "title": "UK HealthCare (University of Kentucky) – Shoulder Post-Operative Exercises",
+          "url": "https://ukhealthcare.uky.edu/orthopaedic-surgery-sports-medicine/sports-medicine/treatment/post-operative-shoulder-exercises"
+        },
+        {
+          "title": "University Orthopedics – Shoulder Exercises: Shoulder Pendulum (video)",
+          "url": "https://www.youtube.com/watch?v=zY5nq68IxwA"
+        },
+        {
+          "title": "Ortho Eval Pal – Pendulum Exercises Done Correctly! (video)",
+          "url": "https://www.youtube.com/watch?v=wD3jQJ-dGnY"
+        }
+      ],
+      "safety": "Only do this exercise if your doctor or physical therapist has approved it, especially after a shoulder injury or surgery, and keep the swings small and within a pain-free range. Keep a firm hold on the table for balance, and stop and contact your doctor or physical therapist if you feel pain."
+    },
+    {
+      "name": "Supported Shoulder Range of Motion",
+      "category": "Mobility",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors", "For Injury Recovery"],
+      "description": "Gentle shoulder movements where a table or your other arm supports the sore arm while it moves. They help a painful or stiff shoulder regain its movement after an injury or surgery.",
+      "equipment": [
+        "A table and a sturdy chair",
+        "A small towel",
+        "A bed or firm surface to lie on, with a pillow for your head"
+      ],
+      "instructions": [
+        "Table slide: Sit upright at a table with your hand resting on a small towel, thumb pointing up.",
+        "Slowly slide the towel forward along the table as far as is comfortable, then slowly slide it back. Repeat up to 10 times.",
+        "Supported arm lift: Lie on your back with your head and neck comfortable on a pillow. Use your good hand to hold and support your affected arm.",
+        "Use your good arm to lift the affected arm up and over your head as far as is comfortable, then slowly lower it back down. Repeat up to 10 times."
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=Jt4CB1xk3YU",
+      "sources": [
+        {
+          "title": "NHS Greater Glasgow and Clyde (Glasgow Royal Infirmary) – The Painful Shoulder (PDF)",
+          "url": "https://rightdecisions.scot.nhs.uk/media/23plobge/the-painful-shoulder.pdf"
+        },
+        {
+          "title": "Sherwood Forest Hospitals NHS Foundation Trust – Shoulder Range of Motion Exercises (PDF)",
+          "url": "https://www.sfh-tr.nhs.uk/media/0romp4a3/pil202509-04-srme-shoulder-range-of-movement-exercises.pdf"
+        },
+        {
+          "title": "Prisma Health – Shoulder stretching and range of motion exercises (video)",
+          "url": "https://www.youtube.com/watch?v=Jt4CB1xk3YU"
+        }
+      ],
+      "safety": "Only do these exercises if your doctor or physical therapist has approved them, and stay within a pain-free range; never force the arm further than is comfortable. If pain builds up or doesn't settle soon after you finish, stop and check with your doctor or physical therapist."
+    },
+    {
+      "name": "Gentle Elbow Bends",
+      "category": "Mobility",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors", "For Injury Recovery"],
+      "description": "Slowly bending and straightening your elbow as far as is comfortable. It helps keep the elbow from getting stiff and brings back movement after an elbow injury.",
+      "equipment": [],
+      "instructions": [
+        "Sit or stand comfortably with your arm relaxed.",
+        "Gently bend your elbow, bringing your hand toward your shoulder, as far as you can without pain.",
+        "Slowly straighten your arm back out as far as you can without pain.",
+        "If you need to, use your other hand to help the movement. You should feel no more than a mild to moderate stretch.",
+        "Repeat 10-15 times, as long as your pain does not increase. You can do it with your palm facing up and with your palm facing down."
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=WFuSCvtEdq0",
+      "sources": [
+        {
+          "title": "East Sussex Healthcare NHS Trust – Elbow Soft Tissue Injury: Shared Care Plan (PDF)",
+          "url": "https://www.esht.nhs.uk/wp-content/uploads/2017/06/0588.pdf"
+        },
+        {
+          "title": "UK HealthCare (University of Kentucky) – Shoulder Post-Operative Exercises",
+          "url": "https://ukhealthcare.uky.edu/orthopaedic-surgery-sports-medicine/sports-medicine/treatment/post-operative-shoulder-exercises"
+        },
+        {
+          "title": "E3 Rehab – Elbow Flexion and Extension Range of Motion (video)",
+          "url": "https://www.youtube.com/watch?v=WFuSCvtEdq0"
+        }
+      ],
+      "safety": "Only do this exercise if your doctor or physical therapist has approved it, and stay within a pain-free range; move slowly and never force the elbow. Stop if your pain increases and contact your doctor or physical therapist."
+    },
+    {
+      "name": "Ankle Stretch",
+      "category": "Flexibility",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors"],
+      "description": "A seated stretch for the muscles around your ankles. Pointing your toes toward you and then away helps keep your ankles flexible for everyday walking and moving.",
+      "equipment": ["A sturdy, armless chair"],
+      "instructions": [
+        "Sit securely toward the edge of a sturdy, armless chair.",
+        "Stretch your legs out in front of you, keeping your knees straight but not locked.",
+        "With your heels on the floor, bend your ankles to point your toes toward you. Hold for 10–30 seconds.",
+        "Bend your ankles to point your toes away from you. Hold for 10–30 seconds.",
+        "Repeat at least 3–5 times. You can stretch both ankles at once or one at a time."
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=87BeiyTFZyU",
+      "sources": [
+        {
+          "title": "National Institute on Aging (Go4Life, archived page) – Ankle Stretch Exercise",
+          "url": "https://web.archive.org/web/20191119215034/https://go4life.nia.nih.gov/exercise/ankle/"
+        },
+        {
+          "title": "National Institute on Aging – Three Types of Exercise Can Improve Your Health and Physical Ability",
+          "url": "https://www.nia.nih.gov/health/exercise-and-physical-activity/three-types-exercise-can-improve-your-health-and-physical"
+        },
+        {
+          "title": "National Institute on Aging – Ankle Stretch for Older Adults (video)",
+          "url": "https://www.youtube.com/watch?v=87BeiyTFZyU"
+        }
+      ],
+      "safety": "Move smoothly and never bounce into the stretch. A mild pulling feeling is normal, but if you feel sharp or stabbing pain or joint pain, ease off so it does not hurt, and remember to breathe normally while you hold."
+    },
+    {
+      "name": "Back Stretch",
+      "category": "Flexibility",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors"],
+      "description": "A gentle seated twist that stretches your back muscles. It can make it easier to turn and look behind you, for example when backing out of a parking space.",
+      "equipment": ["A sturdy chair with armrests"],
+      "instructions": [
+        "Sit toward the front of a sturdy chair with armrests. Sit as straight as you can, with your feet flat on the floor and shoulder-width apart.",
+        "Slowly twist to the left from your waist without moving your hips, and turn your head to the left.",
+        "Hold the left arm of the chair with your left hand and place your right hand on the outside of your left thigh. Twist a little farther if you can.",
+        "Hold for 10–30 seconds, then slowly return to face forward.",
+        "Repeat on the right side. Do at least 3–5 more times on each side."
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=FpIfMyfpCk0",
+      "sources": [
+        {
+          "title": "National Institute on Aging (Go4Life, archived page) – Back Exercise 2",
+          "url": "https://web.archive.org/web/20191119214849/https://go4life.nia.nih.gov/exercise/back-2/"
+        },
+        {
+          "title": "National Institute on Aging – Three Types of Exercise Can Improve Your Health and Physical Ability",
+          "url": "https://www.nia.nih.gov/health/exercise-and-physical-activity/three-types-exercise-can-improve-your-health-and-physical"
+        },
+        {
+          "title": "National Institute on Aging – Back Stretch for Older Adults (video)",
+          "url": "https://www.youtube.com/watch?v=FpIfMyfpCk0"
+        }
+      ],
+      "safety": "If you have had hip or back surgery, talk with your doctor before trying this stretch. Twist slowly and smoothly without bouncing, and ease off if you feel sharp pain."
+    },
+    {
+      "name": "Back of Leg Stretch",
+      "category": "Flexibility",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors"],
+      "description": "A lying-down stretch for the muscles in the back of your legs, also called a hamstring stretch. It helps you keep your legs flexible so you can move more freely.",
+      "equipment": [],
+      "instructions": [
+        "Lie on your back with your left knee bent and your left foot flat on the floor.",
+        "Raise your right leg, keeping the knee slightly bent.",
+        "Reach up and hold your right leg with both hands. Keep your head and shoulders flat on the floor.",
+        "Gently pull your right leg toward your body until you feel a stretch in the back of your leg. Hold for 10–30 seconds.",
+        "Repeat at least 3–5 times, then switch and repeat at least 3–5 times with your left leg."
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=guOj99WPZnw",
+      "sources": [
+        {
+          "title": "National Institute on Aging (Go4Life, archived page) – Back of Leg Exercise (Floor)",
+          "url": "https://web.archive.org/web/20190825093335/https://go4life.nia.nih.gov/exercise/back-of-leg-floor/"
+        },
+        {
+          "title": "National Institute on Aging – Three Types of Exercise Can Improve Your Health and Physical Ability",
+          "url": "https://www.nia.nih.gov/health/exercise-and-physical-activity/three-types-exercise-can-improve-your-health-and-physical"
+        },
+        {
+          "title": "National Institute on Aging – Back Of Leg Stretch for Older Adults (video)",
+          "url": "https://www.youtube.com/watch?v=guOj99WPZnw"
+        }
+      ],
+      "safety": "If you have had hip or back surgery, talk with your doctor before trying this stretch. Keep your knee slightly bent rather than locked, pull gently without bouncing, and don't stretch so far that it hurts."
+    },
+    {
+      "name": "Table Slides",
+      "category": "Mobility",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors", "For Injury Recovery"],
+      "description": "A gentle seated shoulder exercise where you slide a towel forward across a table. It is used in shoulder rehabilitation to help a stiff or sore shoulder start moving again after an injury, surgery, or a period of shoulder pain.",
+      "equipment": [
+        "A table and a small towel",
+        "Optional: a sturdy chair to sit on. This modification is for seniors, people with injuries, or anyone who needs help balancing."
+      ],
+      "instructions": [
+        "Sit on a chair (or stand) facing a table at about waist height.",
+        "Place both hands on a small towel on the table.",
+        "Gently slide the towel forward as far as feels comfortable.",
+        "Slide the towel back to the starting position.",
+        "Repeat 5–10 times, or as many times as your doctor or physical therapist advises. As it gets easier, try to reach a little farther each time, staying pain-free."
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=hN4r5srqnHg",
+      "sources": [
+        {
+          "title": "Oxford University Hospitals NHS Foundation Trust – Rotator Cuff Tear Rehabilitation programme (patient leaflet)",
+          "url": "https://www.ouh.nhs.uk/media/fhjlca0x/110736rotator.pdf"
+        },
+        {
+          "title": "University Hospitals of Leicester NHS Trust – Early shoulder exercises for injury or pain (patient leaflet)",
+          "url": "https://yourhealth.leicestershospitals.nhs.uk/library/csi/therapies/physiotherapy/1082-early-shoulder-exercises-for-injury-or-pain/file"
+        },
+        {
+          "title": "TSAOG Orthopaedics & Spine – Shoulder Rehabilitation Exercise - Table Slides Demonstration (video)",
+          "url": "https://www.youtube.com/watch?v=hN4r5srqnHg"
+        }
+      ],
+      "safety": "Only do this exercise if your doctor or physical therapist has approved it for you, and keep every slide within a pain-free range. If your shoulder shows little or no improvement after 2–3 weeks, check back with your doctor."
+    },
+    {
+      "name": "Gentle Shoulder Rolls",
+      "category": "Mobility",
+      "difficulty": "Beginner",
+      "specialties": [],
+      "description": "A simple movement break that loosens your shoulders by rolling them forward and backward. It is a good reset during repetitive tasks or after holding one position for a long time, which can tire the neck and shoulder muscles.",
+      "equipment": [
+        "Optional: a sturdy chair to sit on. This modification is for seniors, people with injuries, or anyone who needs help balancing."
+      ],
+      "instructions": [
+        "Sit or stand tall with your arms relaxed by your sides.",
+        "Slowly roll your shoulders forward.",
+        "Slowly roll your shoulders backward.",
+        "Relax your shoulders.",
+        "Repeat 5 times. Do this during short breaks from repetitive work, and stand up and move around when you can."
+      ],
+      "sources": [
+        {
+          "title": "Oxford University Hospitals NHS Foundation Trust – Rotator Cuff Tear Rehabilitation programme (patient leaflet)",
+          "url": "https://www.ouh.nhs.uk/media/fhjlca0x/110736rotator.pdf"
+        },
+        {
+          "title": "OSHA – Computer Workstations eTool: Work Process and Recognition",
+          "url": "https://www.osha.gov/etools/computer-workstations/work-process"
+        },
+        {
+          "title": "NHS – Repetitive strain injury (RSI)",
+          "url": "https://www.nhs.uk/conditions/repetitive-strain-injury-rsi/"
+        }
+      ],
+      "safety": "Keep the movement slow and gentle and stay within a comfortable range. If you have shoulder pain, stiffness, tingling, or numbness that is not going away or is getting worse, see a doctor."
+    },
+    {
+      "name": "Gentle Wrist and Finger Movements",
+      "category": "Mobility",
+      "difficulty": "Beginner",
+      "specialties": [],
+      "description": "Slow, simple movements that take your wrists, fingers, and thumbs through their normal range of motion. They make a good break for people who type, use a mouse, or do other repetitive hand work.",
+      "equipment": ["Optional: a table and a rolled-up towel to rest your forearm on for padding."],
+      "instructions": [
+        "Rest your forearm on a table on a rolled-up towel, with your hand hanging over the edge, palm down. Slowly lift your hand up until you feel a gentle stretch, then return to the start.",
+        "Bend your elbow to a right angle at your side with your palm facing down. Slowly turn your forearm so your palm faces up, then down again.",
+        "Start with your fingers straight. Make a gentle fist, then open your hand and straighten your fingers again.",
+        "Start with your thumb pointing outward. Move your thumb across your palm, then back to the start.",
+        "Hold each position for 5–10 seconds and do up to 10 repetitions, moving slowly. Repeat with the other hand."
+      ],
+      "sources": [
+        {
+          "title": "Harvard Health Publishing – 5 exercises to improve hand mobility",
+          "url": "https://www.health.harvard.edu/pain/5-exercises-to-improve-hand-mobility"
+        },
+        {
+          "title": "OSHA – Computer Workstations eTool: Work Process and Recognition",
+          "url": "https://www.osha.gov/etools/computer-workstations/work-process"
+        },
+        {
+          "title": "NHS – Repetitive strain injury (RSI)",
+          "url": "https://www.nhs.uk/conditions/repetitive-strain-injury-rsi/"
+        }
+      ],
+      "safety": "Move slowly and deliberately to avoid pain and injury, and stop if a movement hurts. If your hands or wrists are painful, or you have tingling, numbness, or symptoms that are not going away or are getting worse, see a doctor or physical therapist."
+    },
+    {
+      "name": "Seated Knee Extensions",
+      "category": "Strength",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors", "For Injury Recovery"],
+      "description": "A seated exercise where you slowly straighten one knee and lower it again. It strengthens the muscles at the front of your thigh (quadriceps), which support your knee and help it absorb shock.",
+      "equipment": ["A sturdy chair or bench"],
+      "instructions": [
+        "Sit up straight on a sturdy chair or bench with both feet flat on the floor.",
+        "Tighten the muscles at the front of your thigh.",
+        "Slowly straighten your affected leg and raise your foot as far as is comfortable.",
+        "Squeeze your thigh muscles and hold for 5 seconds.",
+        "Relax and slowly lower your foot back to the floor. Do not swing your leg or use momentum to lift it higher.",
+        "Repeat. The AAOS knee program lists 3 sets of 10, but follow the number your doctor or physical therapist gives you."
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=VuJZ6dqMf8M",
+      "sources": [
+        {
+          "title": "AAOS OrthoInfo – Knee Conditioning Program",
+          "url": "https://orthoinfo.aaos.org/en/recovery/knee-conditioning-program/"
+        },
+        {
+          "title": "AskDoctorJo – Seated Knee Extension (LAQ) - Ask Doctor Jo (video)",
+          "url": "https://www.youtube.com/watch?v=VuJZ6dqMf8M"
+        }
+      ],
+      "safety": "Only do this exercise if your doctor or physical therapist has approved it, and stay within a pain-free range – you should not feel pain during the exercise. Only add ankle weights if your doctor or therapist says it is okay."
+    },
+    {
+      "name": "Heel Slides",
+      "category": "Mobility",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors", "For Injury Recovery"],
+      "description": "A lying-down exercise where you slide your heel toward your buttocks to bend your knee, then slide it back out. It is used after knee and hip surgery to help bring back knee bending and keep blood moving in your legs.",
+      "equipment": ["A bed or a firm, flat surface such as an exercise mat to lie on"],
+      "instructions": [
+        "Lie on your back with both legs flat on the bed.",
+        "Slowly slide the foot of your affected leg toward your buttocks, bending your knee and keeping your heel on the bed.",
+        "Do not let your knee roll inward.",
+        "Hold your knee in the most bent position you can comfortably reach for 5 to 10 seconds.",
+        "Slide your heel back out to straighten your leg.",
+        "Repeat several times (the AAOS hip guide suggests 10), or until your leg feels tired."
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=6-anByqnKp8",
+      "sources": [
+        {
+          "title": "AAOS OrthoInfo – Total Knee Replacement Exercise Guide (Bed-Supported Knee Bends)",
+          "url": "https://orthoinfo.aaos.org/en/recovery/total-knee-replacement-exercise-guide/"
+        },
+        {
+          "title": "AAOS OrthoInfo – Total Hip Replacement Exercise Guide (Bed-Supported Knee Bends)",
+          "url": "https://orthoinfo.aaos.org/en/recovery/total-hip-replacement-exercise-guide/"
+        },
+        {
+          "title": "Children's Hospital Colorado – Core Exercise: Heel Slide (video)",
+          "url": "https://www.youtube.com/watch?v=6-anByqnKp8"
+        }
+      ],
+      "safety": "Only do this exercise if your doctor or physical therapist has approved it, and bend only as far as you can without pain. If you have had hip surgery, follow your hip precautions and do not bend your hip past the limit your surgeon or therapist has given you."
+    },
+    {
+      "name": "Seated Marching",
+      "category": "Mobility",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors", "For Injury Recovery"],
+      "description": "A gentle seated exercise where you lift one knee at a time, like marching in place in a chair. It helps strengthen your hips and thighs and improve flexibility.",
+      "equipment": ["A solid, stable chair without wheels"],
+      "instructions": [
+        "Sit upright near the front of the chair with your feet flat on the floor. Do not lean on the back of the chair.",
+        "Hold on to the sides of the chair.",
+        "Lift your left leg with your knee bent, only as high as is comfortable.",
+        "Place your foot back down with control.",
+        "Repeat with your right leg. Aim for 5 lifts with each leg and slowly build up over time."
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=xxf93bq9-vA",
+      "sources": [
+        {
+          "title": "NHS – Sitting exercises (Hip marching)",
+          "url": "https://www.nhs.uk/live-well/exercise/strength-and-flexibility-exercises/sitting-exercises/"
+        },
+        {
+          "title": "MedlinePlus – Taking care of your new hip joint",
+          "url": "https://medlineplus.gov/ency/patientinstructions/000171.htm"
+        },
+        {
+          "title": "Institute of Sports and Spines – Seated March (video)",
+          "url": "https://www.youtube.com/watch?v=xxf93bq9-vA"
+        }
+      ],
+      "safety": "Only do this exercise if your doctor or physical therapist has approved it, and lift your knee only as high as you can without pain. If you have had a hip replacement, do not lift your knee higher than your hip (more than a 90 degree bend) unless your surgeon or therapist says it is okay."
+    },
+    {
+      "name": "Sit-to-Stand",
+      "category": "Strength",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors", "For Injury Recovery"],
+      "description": "Practice standing up from a chair and sitting back down slowly, using your leg muscles. It strengthens your legs and hips and makes everyday tasks like getting out of a chair easier.",
+      "equipment": ["A sturdy chair without wheels that will not slip"],
+      "instructions": [
+        "Sit on the edge of the chair with your feet flat on the floor, hip-width apart.",
+        "Lean slightly forward.",
+        "Stand up slowly using your legs, not your arms. Keep looking forward, not down.",
+        "Stand up tall, then slowly sit back down, using your hands only to guide you if possible.",
+        "Aim for 5 repetitions. The slower you go, the better."
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=ITv-_BkcrD0",
+      "sources": [
+        {
+          "title": "NHS – Strength exercises (Sit-to-stand)",
+          "url": "https://www.nhs.uk/live-well/exercise/strength-and-flexibility-exercises/strength-exercises/"
+        },
+        {
+          "title": "MedlinePlus – Taking care of your new hip joint",
+          "url": "https://medlineplus.gov/ency/patientinstructions/000171.htm"
+        },
+        {
+          "title": "Baptist Health – Sit to Stand (video)",
+          "url": "https://www.youtube.com/watch?v=ITv-_BkcrD0"
+        }
+      ],
+      "safety": "Only do this exercise if your doctor or physical therapist has approved it, and stay within a pain-free range. If you have had a hip replacement, use a chair high enough that your hips stay above your knees, do not rock yourself up, and use the chair arms or your walker for support if your therapist tells you to."
+    },
+    {
+      "name": "Gentle Hip Abduction",
+      "category": "Strength",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors", "For Injury Recovery"],
+      "description": "A standing exercise where you hold on to a chair or counter and slowly lift one leg out to the side. It strengthens the muscles on the outside of your hip, which help with balance and walking.",
+      "equipment": ["A sturdy chair or counter to hold on to for balance"],
+      "instructions": [
+        "Stand up straight and hold on to the back of a sturdy chair or a counter.",
+        "Point your hip, knee and foot straight forward.",
+        "Keeping your knee straight, slowly lift one leg out to the side as far as is comfortable. Keep your back and hips straight and avoid leaning to the side.",
+        "Slowly lower your leg so your foot is back on the floor.",
+        "Repeat, then switch legs. NHS suggests 5 lifts with each leg; the AAOS hip guide uses 10. Follow your physical therapist's plan."
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=LzuvLW_gJ8w",
+      "sources": [
+        {
+          "title": "AAOS OrthoInfo – Total Hip Replacement Exercise Guide (Standing Hip Abduction)",
+          "url": "https://orthoinfo.aaos.org/en/recovery/total-hip-replacement-exercise-guide/"
+        },
+        {
+          "title": "NHS – Strength exercises (Sideways leg lift)",
+          "url": "https://www.nhs.uk/live-well/exercise/strength-and-flexibility-exercises/strength-exercises/"
+        },
+        {
+          "title": "MU Health – Standing Hip Abduction Extension (video)",
+          "url": "https://www.youtube.com/watch?v=LzuvLW_gJ8w"
+        }
+      ],
+      "safety": "Only do this exercise if your doctor or physical therapist has approved it, and lift only as far as you can without pain. If you have had a hip replacement, follow your hip precautions, including not crossing your legs."
+    },
+    {
+      "name": "Supported Standing Hip Extension",
+      "category": "Strength",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors", "For Injury Recovery"],
+      "description": "While holding on to something steady, you slowly move one straight leg backward. It works the muscles in the back of your thigh and your buttock and is part of common hip recovery exercise programs.",
+      "equipment": ["A sturdy chair, counter, or wall to hold on to for support"],
+      "instructions": [
+        "Stand up straight and hold on to the back of a sturdy chair, a counter, or a wall.",
+        "Slowly lift your leg (your operated leg, if you had hip surgery) straight back behind you.",
+        "Keep your back straight and avoid arching it as your leg moves back. You should feel the effort in the back of your thigh and buttock.",
+        "Hold for 2 or 3 counts, then slowly return your foot to the floor.",
+        "Repeat 10 times, or as many times as your physical therapist recommends."
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=7WrpeftqVPQ",
+      "sources": [
+        {
+          "title": "AAOS OrthoInfo – Total Hip Replacement Exercise Guide",
+          "url": "https://www.orthoinfo.org/en/recovery/total-hip-replacement-exercise-guide/"
+        },
+        {
+          "title": "NHS – Strength exercises",
+          "url": "https://www.nhs.uk/live-well/exercise/strength-and-flexibility-exercises/strength-exercises/"
+        },
+        {
+          "title": "Visiting Nurse Association Health Group – Standing Hip Extension | Physical Therapy Exercises (video)",
+          "url": "https://www.youtube.com/watch?v=7WrpeftqVPQ"
+        },
+        {
+          "title": "Fit Family Physical Therapy – Standing hip extension (video)",
+          "url": "https://youtube.com/shorts/ysG2GAdq2Uw"
+        }
+      ],
+      "safety": "Only do this exercise if your doctor or physical therapist has approved it, follow any hip precautions you were given, and stay within a pain-free range. Always hold on to a firm support, move slowly, and do not arch your back."
+    },
+    {
+      "name": "Prescribed Walking Practice",
+      "category": "Mobility",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors", "For Injury Recovery"],
+      "description": "Short, regular walks using the walking aid your care team prescribed, such as a walker, crutches, or a cane. Walking is one of the best ways to help your hip regain strength and movement after surgery.",
+      "equipment": ["The walking aid your care team prescribed (for example, a walker, crutches, or a cane)"],
+      "instructions": [
+        "Stand up tall with your weight evenly balanced on your walker or crutches. Put only as much weight on your leg as your surgeon or therapist told you to.",
+        "Move your walker or crutches forward a short distance.",
+        "Step forward with your operated leg so your heel touches the floor first, then let your whole foot flatten, then lift your toes off as you finish the step.",
+        "Walk as smoothly and evenly as you can. Don't hurry - adjust your step length and speed to keep an even pattern.",
+        "Walk every day as far as is comfortable. As your strength improves, you can slowly walk for longer, as your care team advises.",
+        "If you use a single cane or crutch, hold it in the hand opposite your surgery side."
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=i3X5HQhoq60",
+      "sources": [
+        {
+          "title": "AAOS OrthoInfo – Total Hip Replacement Exercise Guide",
+          "url": "https://www.orthoinfo.org/en/recovery/total-hip-replacement-exercise-guide/"
+        },
+        {
+          "title": "NHS – Recovering from a hip replacement",
+          "url": "https://www.nhs.uk/tests-and-treatments/hip-replacement/recovering-from-a-hip-replacement/"
+        },
+        {
+          "title": "Moffitt Cancer Center – Hip Surgery Recovery: Safe Movements & Techniques (video)",
+          "url": "https://www.youtube.com/watch?v=i3X5HQhoq60"
+        }
+      ],
+      "safety": "Only do this if your doctor or physical therapist has approved it, use your walking aid exactly as prescribed, follow any hip precautions you were given, and stay within a pain-free range. Avoid sudden turns or anything with a high risk of falling, and talk to your physical therapist if you have any problems."
+    },
+    {
+      "name": "Easy Walk or March",
+      "category": "Cardio",
+      "difficulty": "Beginner",
+      "specialties": [],
+      "description": "A gentle walk or march in place to warm up your body before exercise. Warming up helps prevent injury and makes your workout more effective.",
+      "equipment": [],
+      "instructions": [
+        "Stand tall and start marching in place, or walk around at an easy pace.",
+        "If you are marching, you can also march forward and backward.",
+        "Swing or pump your arms in rhythm with your steps, keeping your elbows bent and your hands relaxed.",
+        "Keep going for about 2 minutes at a pace that feels easy."
+      ],
+      "sources": [
+        {
+          "title": "NHS – How to warm up before exercising",
+          "url": "https://www.nhs.uk/live-well/exercise/how-to-warm-up-before-exercising/"
+        },
+        {
+          "title": "AAOS OrthoInfo – Foot and Ankle Conditioning Program",
+          "url": "https://www.orthoinfo.org/en/recovery/foot-and-ankle-conditioning-program/"
+        }
+      ],
+      "safety": "Stop right away if you feel any pain or become unwell. If you have a health problem, an injury, or have had a recent operation, check with a healthcare professional before starting."
+    },
+    {
+      "name": "Seated Ankle Circles",
+      "category": "Mobility",
+      "difficulty": "Beginner",
+      "specialties": [],
+      "description": "While sitting, you slowly turn your foot in circles. This gently moves the muscles and joints around your ankle and helps keep it flexible.",
+      "equipment": ["A sturdy chair"],
+      "instructions": [
+        "Sit up in a sturdy chair and lift one foot off the floor.",
+        "Slowly turn your foot in a circle, keeping the circles small and using just your foot and ankle.",
+        "Switch and circle your foot in the opposite direction.",
+        "Keep going for about 1 minute, then lower your foot and repeat with the other ankle for 1 minute."
+      ],
+      "sources": [
+        {
+          "title": "Cleveland Clinic – 9 Stretching Exercises and Benefits",
+          "url": "https://health.clevelandclinic.org/stretching"
+        },
+        {
+          "title": "AAOS OrthoInfo – Foot and Ankle Conditioning Program",
+          "url": "https://www.orthoinfo.org/en/recovery/foot-and-ankle-conditioning-program/"
+        }
+      ],
+      "safety": "Move slowly and keep the movement small and controlled. You should not feel pain during the exercise - stop and talk to your doctor or physical therapist if you do."
+    },
+    {
+      "name": "Supported Calf Raises",
+      "category": "Strength",
+      "difficulty": "Beginner",
+      "specialties": [],
+      "description": "While holding on to a chair, you rise up onto your toes and slowly lower back down. This strengthens your calf muscles, which help keep your ankles stable.",
+      "equipment": ["A sturdy chair or a wall to hold on to for balance"],
+      "instructions": [
+        "Stand with your weight evenly on both feet and hold on to the back of a sturdy chair or a wall for balance.",
+        "Keep your legs straight.",
+        "Slowly raise both heels off the floor as high as is comfortable.",
+        "Slowly lower your heels back to the floor. The movement should be slow and controlled.",
+        "Do 2 sets of 10."
+      ],
+      "sources": [
+        {
+          "title": "AAOS OrthoInfo – Foot and Ankle Conditioning Program",
+          "url": "https://www.orthoinfo.org/en/recovery/foot-and-ankle-conditioning-program/"
+        },
+        {
+          "title": "NHS – Strength exercises",
+          "url": "https://www.nhs.uk/live-well/exercise/strength-and-flexibility-exercises/strength-exercises/"
+        }
+      ],
+      "safety": "Hold on to a steady support so you don't lose your balance. You should not feel pain during this exercise - stop and talk to your doctor or physical therapist if you do."
     }
   ],
   "pathways": [
@@ -63,6 +825,264 @@
       "schedule": [
         "Push-Up", "Squat", "rest", "Push-Up", "Squat", "rest", "rest",
         "Push-Up", "Squat", "rest", "Push-Up", "Squat", "rest", "rest"
+      ]
+    },
+    {
+      "name": "Balance Basics",
+      "description": "Balance and Stability · Track A\n\nIntroduces two basic balance exercises to help users practice stability and controlled movement.\n\nEach session takes about 6–8 minutes:\n• Heel-to-toe walk: 2 minutes, including rest\n• Stand on One Foot: 2 minutes total, alternating sides\n• Rest and transitions: 2–4 minutes\n\nDo 3 sessions a week for 4 weeks.\n\nGoal: Improve balance, stability, and confidence while standing and walking.\n\nWeek 1: Learn the exercises with appropriate support.\nWeek 2: Practice controlled movements and improve consistency.\nWeek 3: Gradually increase practice time if comfortable.\nWeek 4: Combine both exercises into a regular balance routine.",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors"],
+      "schedule": [
+        ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", "rest",
+        ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", "rest",
+        ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", "rest",
+        ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", "rest"
+      ]
+    },
+    {
+      "name": "Steady Steps",
+      "description": "Balance and Stability · Track B\n\nRepeats the balance movements with an emphasis on controlled steps and steady positioning.\n\nEach session takes about 6–8 minutes:\n• Gentle practice of the heel-to-toe walk: 2 minutes\n• Stand on One Foot: 2 minutes total, alternating sides\n• Rest and transitions: 2–4 minutes\n\nDo 3 sessions a week for 4 weeks.\n\nGoal: Improve balance, stability, and confidence while standing and walking.\n\nWeek 1: Learn the exercises with appropriate support.\nWeek 2: Practice controlled movements and improve consistency.\nWeek 3: Gradually increase practice time if comfortable.\nWeek 4: Combine both exercises into a regular balance routine.",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors"],
+      "schedule": [
+        ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", "rest",
+        ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", "rest",
+        ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", "rest",
+        ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", "rest"
+      ]
+    },
+    {
+      "name": "Balance Practice",
+      "description": "Balance and Stability · Track C\n\nCombines both exercises into a slightly longer session to encourage consistency and confidence.\n\nEach session takes about 8–10 minutes:\n• Heel-to-toe walk: 2–3 minutes, including rest\n• Stand on One Foot: 2–3 minutes total, alternating sides\n• Repeat the movements at a comfortable pace: 2 minutes\n• Rest and transitions: 2 minutes\n\nDo 3 sessions a week for 4 weeks.\n\nGoal: Improve balance, stability, and confidence while standing and walking.\n\nWeek 1: Learn the exercises with appropriate support.\nWeek 2: Practice controlled movements and improve consistency.\nWeek 3: Gradually increase practice time if comfortable.\nWeek 4: Combine both exercises into a regular balance routine.",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors"],
+      "schedule": [
+        ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", "rest",
+        ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", "rest",
+        ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", "rest",
+        ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", ["Heel-to-Toe Walk", "Stand on One Foot"], "rest", "rest"
+      ]
+    },
+    {
+      "name": "Strength Foundations",
+      "description": "Upper-Body Strength · Track A\n\nIntroduces the three selected strength exercises at a manageable pace.\n\nEach session takes about 10–12 minutes:\n• Wall push-ups: 2 minutes, including rest\n• Overhead Arm Raise: 2 minutes, including rest\n• Chair Dip: 2 minutes, including rest\n• Rest and transitions: 4–6 minutes\n\nHave a back injury? Turn on \"Back injury alternatives\" above the calendar to swap in Pendulum Swings and Supported Shoulder Range of Motion.\n\nDo 2 sessions a week for 6 weeks, with recovery days in between.\n\nGoal: Maintain upper-body strength for everyday activities such as reaching, pushing, and supporting body movement.\n\nWeeks 1–2: Learn each movement and practice with an appropriate level of effort.\nWeeks 3–4: Build consistency and control while allowing enough recovery.\nWeeks 5–6: Gradually increase repetitions or practice time when comfortable and appropriate.",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors"],
+      "schedule": [
+        ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", "rest",
+        ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", "rest",
+        ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", "rest",
+        ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", "rest",
+        ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", "rest",
+        ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", "rest"
+      ],
+      "alternatives": {
+        "label": "Back injury alternatives",
+        "exercises": ["Pendulum Swings", "Supported Shoulder Range of Motion"]
+      }
+    },
+    {
+      "name": "Controlled Strength",
+      "description": "Upper-Body Strength · Track B\n\nFocuses on controlled movement and appropriate rest between exercises.\n\nEach session takes about 10–12 minutes:\n• Overhead Arm Raise: 2 minutes, including rest\n• Wall push-ups: 2 minutes, including rest\n• Chair Dip: 2 minutes, including rest\n• Rest and transitions: 4–6 minutes\n\nHave a back injury? Turn on \"Back injury alternatives\" above the calendar to swap in Pendulum Swings and Supported Shoulder Range of Motion.\n\nDo 2 sessions a week for 6 weeks, with recovery days in between.\n\nGoal: Maintain upper-body strength for everyday activities such as reaching, pushing, and supporting body movement.\n\nWeeks 1–2: Learn each movement and practice with an appropriate level of effort.\nWeeks 3–4: Build consistency and control while allowing enough recovery.\nWeeks 5–6: Gradually increase repetitions or practice time when comfortable and appropriate.",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors"],
+      "schedule": [
+        ["Overhead Arm Raise", "Wall Push-Ups", "Chair Dip"], "rest", "rest", ["Overhead Arm Raise", "Wall Push-Ups", "Chair Dip"], "rest", "rest", "rest",
+        ["Overhead Arm Raise", "Wall Push-Ups", "Chair Dip"], "rest", "rest", ["Overhead Arm Raise", "Wall Push-Ups", "Chair Dip"], "rest", "rest", "rest",
+        ["Overhead Arm Raise", "Wall Push-Ups", "Chair Dip"], "rest", "rest", ["Overhead Arm Raise", "Wall Push-Ups", "Chair Dip"], "rest", "rest", "rest",
+        ["Overhead Arm Raise", "Wall Push-Ups", "Chair Dip"], "rest", "rest", ["Overhead Arm Raise", "Wall Push-Ups", "Chair Dip"], "rest", "rest", "rest",
+        ["Overhead Arm Raise", "Wall Push-Ups", "Chair Dip"], "rest", "rest", ["Overhead Arm Raise", "Wall Push-Ups", "Chair Dip"], "rest", "rest", "rest",
+        ["Overhead Arm Raise", "Wall Push-Ups", "Chair Dip"], "rest", "rest", ["Overhead Arm Raise", "Wall Push-Ups", "Chair Dip"], "rest", "rest", "rest"
+      ],
+      "alternatives": {
+        "label": "Back injury alternatives",
+        "exercises": ["Pendulum Swings", "Supported Shoulder Range of Motion"]
+      }
+    },
+    {
+      "name": "Full Strength Routine",
+      "description": "Upper-Body Strength · Track C\n\nCombines all three movements into one session, with enough time to practice carefully and recover between exercises.\n\nEach session takes about 12–15 minutes:\n• Wall push-ups: 2 minutes\n• Overhead Arm Raise: 2 minutes\n• Chair Dip: 2 minutes\n• Repeat selected movements at a comfortable level: 2–3 minutes\n• Rest and transitions: 4–6 minutes\n\nHave a back injury? Turn on \"Back injury alternatives\" above the calendar to swap in Pendulum Swings and Supported Shoulder Range of Motion.\n\nDo 2 sessions a week for 6 weeks, with recovery days in between.\n\nGoal: Maintain upper-body strength for everyday activities such as reaching, pushing, and supporting body movement.\n\nWeeks 1–2: Learn each movement and practice with an appropriate level of effort.\nWeeks 3–4: Build consistency and control while allowing enough recovery.\nWeeks 5–6: Gradually increase repetitions or practice time when comfortable and appropriate.",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors"],
+      "schedule": [
+        ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", "rest",
+        ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", "rest",
+        ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", "rest",
+        ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", "rest",
+        ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", "rest",
+        ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", ["Wall Push-Ups", "Overhead Arm Raise", "Chair Dip"], "rest", "rest", "rest"
+      ],
+      "alternatives": {
+        "label": "Back injury alternatives",
+        "exercises": ["Pendulum Swings", "Supported Shoulder Range of Motion"]
+      }
+    },
+    {
+      "name": "Gentle Stretching",
+      "description": "Flexibility and Comfortable Movement · Track A\n\nIntroduces the three stretches to help users practice comfortable movement.\n\nEach session takes about 8–10 minutes:\n• Ankle Stretch: 2 minutes, including both sides if applicable\n• Back Stretch: 2 minutes\n• Back of Leg Stretch: 2 minutes, including both sides if applicable\n• Rest and transitions: 2–4 minutes\n\nDo 3 sessions a week for 4 weeks (up to 5 a week if comfortable).\n\nGoal: Maintain comfortable movement in the ankles, back, and backs of the legs.\n\nWeek 1: Learn each stretch and find a comfortable range of motion.\nWeek 2: Practice holding stretches gently without bouncing.\nWeek 3: Combine the three stretches into a routine.\nWeek 4: Establish a consistent stretching habit.",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors"],
+      "schedule": [
+        ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", "rest",
+        ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", "rest",
+        ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", "rest",
+        ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", "rest"
+      ]
+    },
+    {
+      "name": "Lower-Body Flexibility",
+      "description": "Flexibility and Comfortable Movement · Track B\n\nEmphasizes the ankle and back-of-leg stretches while keeping movements gentle and controlled.\n\nEach session takes about 8–10 minutes:\n• Ankle Stretch: 2 minutes\n• Back of Leg Stretch: 3 minutes, including both sides if applicable\n• Back Stretch: 2 minutes\n• Rest and transitions: 1–3 minutes\n\nDo 3 sessions a week for 4 weeks (up to 5 a week if comfortable).\n\nGoal: Maintain comfortable movement in the ankles, back, and backs of the legs.\n\nWeek 1: Learn each stretch and find a comfortable range of motion.\nWeek 2: Practice holding stretches gently without bouncing.\nWeek 3: Combine the three stretches into a routine.\nWeek 4: Establish a consistent stretching habit.",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors"],
+      "schedule": [
+        ["Ankle Stretch", "Back of Leg Stretch", "Back Stretch"], "rest", ["Ankle Stretch", "Back of Leg Stretch", "Back Stretch"], "rest", ["Ankle Stretch", "Back of Leg Stretch", "Back Stretch"], "rest", "rest",
+        ["Ankle Stretch", "Back of Leg Stretch", "Back Stretch"], "rest", ["Ankle Stretch", "Back of Leg Stretch", "Back Stretch"], "rest", ["Ankle Stretch", "Back of Leg Stretch", "Back Stretch"], "rest", "rest",
+        ["Ankle Stretch", "Back of Leg Stretch", "Back Stretch"], "rest", ["Ankle Stretch", "Back of Leg Stretch", "Back Stretch"], "rest", ["Ankle Stretch", "Back of Leg Stretch", "Back Stretch"], "rest", "rest",
+        ["Ankle Stretch", "Back of Leg Stretch", "Back Stretch"], "rest", ["Ankle Stretch", "Back of Leg Stretch", "Back Stretch"], "rest", ["Ankle Stretch", "Back of Leg Stretch", "Back Stretch"], "rest", "rest"
+      ]
+    },
+    {
+      "name": "Complete Stretching Routine",
+      "description": "Flexibility and Comfortable Movement · Track C\n\nCombines all three stretches into a longer session that users can follow as part of their regular routine.\n\nEach session takes about 10–12 minutes:\n• Ankle Stretch: 2 minutes\n• Back Stretch: 2–3 minutes\n• Back of Leg Stretch: 3 minutes\n• Repeat any comfortable stretch if desired: 1 minute\n• Rest and transitions: 2–3 minutes\n\nDo 3 sessions a week for 4 weeks (up to 5 a week if comfortable).\n\nGoal: Maintain comfortable movement in the ankles, back, and backs of the legs.\n\nWeek 1: Learn each stretch and find a comfortable range of motion.\nWeek 2: Practice holding stretches gently without bouncing.\nWeek 3: Combine the three stretches into a routine.\nWeek 4: Establish a consistent stretching habit.",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors"],
+      "schedule": [
+        ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", "rest",
+        ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", "rest",
+        ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", "rest",
+        ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", ["Ankle Stretch", "Back Stretch", "Back of Leg Stretch"], "rest", "rest"
+      ]
+    },
+    {
+      "name": "Gentle Knee Mobility",
+      "description": "Knee and Leg Recovery · Track A\n\nIntroduces gentle movements to maintain knee mobility.\n\nEach session takes about 6–8 minutes:\n• Seated Knee Extensions: 2 minutes\n• Heel Slides: 2 minutes\n• Rest and transitions: 2–4 minutes\n\nDo 3 sessions a week for 4 weeks, or as approved by your healthcare professional. Adjust the length to your recovery progress.\n\nGoal: Restore leg strength and knee mobility.\n\nWeek 1: Introduce gentle knee movements that have been approved.\nWeek 2: Practice controlled movement and consistency.\nWeek 3: Introduce approved functional exercises.\nWeek 4: Combine suitable exercises into a regular recovery routine.",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors", "For Injury Recovery"],
+      "schedule": [
+        ["Seated Knee Extensions", "Heel Slides"], "rest", ["Seated Knee Extensions", "Heel Slides"], "rest", ["Seated Knee Extensions", "Heel Slides"], "rest", "rest",
+        ["Seated Knee Extensions", "Heel Slides"], "rest", ["Seated Knee Extensions", "Heel Slides"], "rest", ["Seated Knee Extensions", "Heel Slides"], "rest", "rest",
+        ["Seated Knee Extensions", "Heel Slides"], "rest", ["Seated Knee Extensions", "Heel Slides"], "rest", ["Seated Knee Extensions", "Heel Slides"], "rest", "rest",
+        ["Seated Knee Extensions", "Heel Slides"], "rest", ["Seated Knee Extensions", "Heel Slides"], "rest", ["Seated Knee Extensions", "Heel Slides"], "rest", "rest"
+      ]
+    },
+    {
+      "name": "Leg Movement and Control",
+      "description": "Knee and Leg Recovery · Track B\n\nFocuses on controlled leg movements for everyday mobility.\n\nEach session takes about 6–8 minutes:\n• Seated Marching: 2 minutes\n• Seated Knee Extensions: 2 minutes\n• Rest and transitions: 2–4 minutes\n\nDo 3 sessions a week for 4 weeks, or as approved by your healthcare professional. Adjust the length to your recovery progress.\n\nGoal: Restore leg strength and knee mobility.\n\nWeek 1: Introduce gentle knee movements that have been approved.\nWeek 2: Practice controlled movement and consistency.\nWeek 3: Introduce approved functional exercises.\nWeek 4: Combine suitable exercises into a regular recovery routine.",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors", "For Injury Recovery"],
+      "schedule": [
+        ["Seated Marching", "Seated Knee Extensions"], "rest", ["Seated Marching", "Seated Knee Extensions"], "rest", ["Seated Marching", "Seated Knee Extensions"], "rest", "rest",
+        ["Seated Marching", "Seated Knee Extensions"], "rest", ["Seated Marching", "Seated Knee Extensions"], "rest", ["Seated Marching", "Seated Knee Extensions"], "rest", "rest",
+        ["Seated Marching", "Seated Knee Extensions"], "rest", ["Seated Marching", "Seated Knee Extensions"], "rest", ["Seated Marching", "Seated Knee Extensions"], "rest", "rest",
+        ["Seated Marching", "Seated Knee Extensions"], "rest", ["Seated Marching", "Seated Knee Extensions"], "rest", ["Seated Marching", "Seated Knee Extensions"], "rest", "rest"
+      ]
+    },
+    {
+      "name": "Functional Leg Strength",
+      "description": "Knee and Leg Recovery · Track C\n\nIntroduces functional movements to support standing and daily activities, when approved.\n\nEach session takes about 8–10 minutes:\n• Seated Marching: 2 minutes\n• Sit-to-Stand Practice: 2–3 minutes\n• Seated Knee Extensions: 2 minutes\n• Rest and transitions: 2–3 minutes\n\nDo 3 sessions a week for 4 weeks, or as approved by your healthcare professional. Adjust the length to your recovery progress.\n\nGoal: Restore leg strength and knee mobility.\n\nWeek 1: Introduce gentle knee movements that have been approved.\nWeek 2: Practice controlled movement and consistency.\nWeek 3: Introduce approved functional exercises.\nWeek 4: Combine suitable exercises into a regular recovery routine.",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors", "For Injury Recovery"],
+      "schedule": [
+        ["Seated Marching", "Sit-to-Stand", "Seated Knee Extensions"], "rest", ["Seated Marching", "Sit-to-Stand", "Seated Knee Extensions"], "rest", ["Seated Marching", "Sit-to-Stand", "Seated Knee Extensions"], "rest", "rest",
+        ["Seated Marching", "Sit-to-Stand", "Seated Knee Extensions"], "rest", ["Seated Marching", "Sit-to-Stand", "Seated Knee Extensions"], "rest", ["Seated Marching", "Sit-to-Stand", "Seated Knee Extensions"], "rest", "rest",
+        ["Seated Marching", "Sit-to-Stand", "Seated Knee Extensions"], "rest", ["Seated Marching", "Sit-to-Stand", "Seated Knee Extensions"], "rest", ["Seated Marching", "Sit-to-Stand", "Seated Knee Extensions"], "rest", "rest",
+        ["Seated Marching", "Sit-to-Stand", "Seated Knee Extensions"], "rest", ["Seated Marching", "Sit-to-Stand", "Seated Knee Extensions"], "rest", ["Seated Marching", "Sit-to-Stand", "Seated Knee Extensions"], "rest", "rest"
+      ]
+    },
+    {
+      "name": "Gentle Shoulder Mobility",
+      "description": "Shoulder and Arm Recovery · Track A\n\nIntroduces gentle shoulder movements when approved for the specific injury.\n\nEach session takes about 5–7 minutes:\n• Pendulum Swings: 2 minutes\n• Table Slides: 2 minutes\n• Rest and transitions: 1–3 minutes\n\nDo 3 sessions a week for 4 weeks, or as prescribed by your healthcare professional. Adjust the length to your injury and treatment plan.\n\nGoal: Improve upper-body mobility and function.\n\nWeek 1: Learn approved gentle shoulder and arm movements.\nWeek 2: Practice controlled movement within the permitted range.\nWeek 3: Combine suitable mobility exercises.\nWeek 4: Practice a personalized routine based on recovery progress.",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors", "For Injury Recovery"],
+      "schedule": [
+        ["Pendulum Swings", "Table Slides"], "rest", ["Pendulum Swings", "Table Slides"], "rest", ["Pendulum Swings", "Table Slides"], "rest", "rest",
+        ["Pendulum Swings", "Table Slides"], "rest", ["Pendulum Swings", "Table Slides"], "rest", ["Pendulum Swings", "Table Slides"], "rest", "rest",
+        ["Pendulum Swings", "Table Slides"], "rest", ["Pendulum Swings", "Table Slides"], "rest", ["Pendulum Swings", "Table Slides"], "rest", "rest",
+        ["Pendulum Swings", "Table Slides"], "rest", ["Pendulum Swings", "Table Slides"], "rest", ["Pendulum Swings", "Table Slides"], "rest", "rest"
+      ]
+    },
+    {
+      "name": "Controlled Arm Movement",
+      "description": "Shoulder and Arm Recovery · Track B\n\nFocuses on comfortable arm movement without forcing the shoulder.\n\nEach session takes about 6–8 minutes:\n• Gentle Elbow Bends: 2 minutes\n• Table Slides: 2 minutes\n• Rest and transitions: 2–4 minutes\n\nDo 3 sessions a week for 4 weeks, or as prescribed by your healthcare professional. Adjust the length to your injury and treatment plan.\n\nGoal: Improve upper-body mobility and function.\n\nWeek 1: Learn approved gentle shoulder and arm movements.\nWeek 2: Practice controlled movement within the permitted range.\nWeek 3: Combine suitable mobility exercises.\nWeek 4: Practice a personalized routine based on recovery progress.",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors", "For Injury Recovery"],
+      "schedule": [
+        ["Gentle Elbow Bends", "Table Slides"], "rest", ["Gentle Elbow Bends", "Table Slides"], "rest", ["Gentle Elbow Bends", "Table Slides"], "rest", "rest",
+        ["Gentle Elbow Bends", "Table Slides"], "rest", ["Gentle Elbow Bends", "Table Slides"], "rest", ["Gentle Elbow Bends", "Table Slides"], "rest", "rest",
+        ["Gentle Elbow Bends", "Table Slides"], "rest", ["Gentle Elbow Bends", "Table Slides"], "rest", ["Gentle Elbow Bends", "Table Slides"], "rest", "rest",
+        ["Gentle Elbow Bends", "Table Slides"], "rest", ["Gentle Elbow Bends", "Table Slides"], "rest", ["Gentle Elbow Bends", "Table Slides"], "rest", "rest"
+      ]
+    },
+    {
+      "name": "Shoulder Mobility Routine",
+      "description": "Shoulder and Arm Recovery · Track C\n\nCombines suitable movements to support comfortable upper-body function.\n\nEach session takes about 8–10 minutes:\n• Pendulum Swings: 2 minutes, if approved\n• Supported Shoulder Range of Motion: 2–3 minutes, if approved\n• Gentle Elbow Bends: 2 minutes\n• Rest and transitions: 2–3 minutes\n\nDo 3 sessions a week for 4 weeks, or as prescribed by your healthcare professional. Adjust the length to your injury and treatment plan.\n\nGoal: Improve upper-body mobility and function.\n\nWeek 1: Learn approved gentle shoulder and arm movements.\nWeek 2: Practice controlled movement within the permitted range.\nWeek 3: Combine suitable mobility exercises.\nWeek 4: Practice a personalized routine based on recovery progress.",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors", "For Injury Recovery"],
+      "schedule": [
+        ["Pendulum Swings", "Supported Shoulder Range of Motion", "Gentle Elbow Bends"], "rest", ["Pendulum Swings", "Supported Shoulder Range of Motion", "Gentle Elbow Bends"], "rest", ["Pendulum Swings", "Supported Shoulder Range of Motion", "Gentle Elbow Bends"], "rest", "rest",
+        ["Pendulum Swings", "Supported Shoulder Range of Motion", "Gentle Elbow Bends"], "rest", ["Pendulum Swings", "Supported Shoulder Range of Motion", "Gentle Elbow Bends"], "rest", ["Pendulum Swings", "Supported Shoulder Range of Motion", "Gentle Elbow Bends"], "rest", "rest",
+        ["Pendulum Swings", "Supported Shoulder Range of Motion", "Gentle Elbow Bends"], "rest", ["Pendulum Swings", "Supported Shoulder Range of Motion", "Gentle Elbow Bends"], "rest", ["Pendulum Swings", "Supported Shoulder Range of Motion", "Gentle Elbow Bends"], "rest", "rest",
+        ["Pendulum Swings", "Supported Shoulder Range of Motion", "Gentle Elbow Bends"], "rest", ["Pendulum Swings", "Supported Shoulder Range of Motion", "Gentle Elbow Bends"], "rest", ["Pendulum Swings", "Supported Shoulder Range of Motion", "Gentle Elbow Bends"], "rest", "rest"
+      ]
+    },
+    {
+      "name": "Supported Hip Strength",
+      "description": "Hip Mobility and Recovery · Track A\n\nPractices controlled hip movement with stable support, if permitted.\n\nEach session takes about 6–8 minutes:\n• Gentle Hip Abduction: 2 minutes\n• Supported Standing Hip Extensions: 2 minutes, if approved\n• Rest and transitions: 2–4 minutes\n\nThe length of this pathway is set by your injury and rehabilitation plan; this schedule follows the 4-week progression. Do 3 sessions a week, or as prescribed by your healthcare professional.\n\nGoal: Improve hip mobility and strength when permitted.\n\nWeek 1: Learn approved gentle movements and review any hip precautions.\nWeek 2: Practice controlled movement within the permitted range.\nWeek 3: Introduce suitable strength or mobility exercises if approved.\nWeek 4: Practice an individualized routine based on recovery progress.",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors", "For Injury Recovery"],
+      "schedule": [
+        ["Gentle Hip Abduction", "Supported Standing Hip Extension"], "rest", ["Gentle Hip Abduction", "Supported Standing Hip Extension"], "rest", ["Gentle Hip Abduction", "Supported Standing Hip Extension"], "rest", "rest",
+        ["Gentle Hip Abduction", "Supported Standing Hip Extension"], "rest", ["Gentle Hip Abduction", "Supported Standing Hip Extension"], "rest", ["Gentle Hip Abduction", "Supported Standing Hip Extension"], "rest", "rest",
+        ["Gentle Hip Abduction", "Supported Standing Hip Extension"], "rest", ["Gentle Hip Abduction", "Supported Standing Hip Extension"], "rest", ["Gentle Hip Abduction", "Supported Standing Hip Extension"], "rest", "rest",
+        ["Gentle Hip Abduction", "Supported Standing Hip Extension"], "rest", ["Gentle Hip Abduction", "Supported Standing Hip Extension"], "rest", ["Gentle Hip Abduction", "Supported Standing Hip Extension"], "rest", "rest"
+      ]
+    },
+    {
+      "name": "Hip Mobility and Daily Movement",
+      "description": "Hip Mobility and Recovery · Track B\n\nCombines suitable hip movements and prescribed walking practice.\n\nEach session takes about 8–10 minutes:\n• Seated Marching: 2 minutes, if approved\n• Supported Standing Hip Extensions: 2 minutes, if approved\n• Prescribed Walking Practice: 2–3 minutes\n• Rest and transitions: 2–3 minutes\n\nThe length of this pathway is set by your injury and rehabilitation plan; this schedule follows the 4-week progression. Do 3 sessions a week, or as prescribed by your healthcare professional.\n\nGoal: Improve hip mobility and strength when permitted.\n\nWeek 1: Learn approved gentle movements and review any hip precautions.\nWeek 2: Practice controlled movement within the permitted range.\nWeek 3: Introduce suitable strength or mobility exercises if approved.\nWeek 4: Practice an individualized routine based on recovery progress.",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors", "For Injury Recovery"],
+      "schedule": [
+        ["Seated Marching", "Supported Standing Hip Extension", "Prescribed Walking Practice"], "rest", ["Seated Marching", "Supported Standing Hip Extension", "Prescribed Walking Practice"], "rest", ["Seated Marching", "Supported Standing Hip Extension", "Prescribed Walking Practice"], "rest", "rest",
+        ["Seated Marching", "Supported Standing Hip Extension", "Prescribed Walking Practice"], "rest", ["Seated Marching", "Supported Standing Hip Extension", "Prescribed Walking Practice"], "rest", ["Seated Marching", "Supported Standing Hip Extension", "Prescribed Walking Practice"], "rest", "rest",
+        ["Seated Marching", "Supported Standing Hip Extension", "Prescribed Walking Practice"], "rest", ["Seated Marching", "Supported Standing Hip Extension", "Prescribed Walking Practice"], "rest", ["Seated Marching", "Supported Standing Hip Extension", "Prescribed Walking Practice"], "rest", "rest",
+        ["Seated Marching", "Supported Standing Hip Extension", "Prescribed Walking Practice"], "rest", ["Seated Marching", "Supported Standing Hip Extension", "Prescribed Walking Practice"], "rest", ["Seated Marching", "Supported Standing Hip Extension", "Prescribed Walking Practice"], "rest", "rest"
+      ]
+    },
+    {
+      "name": "Ankle Balance Basics",
+      "description": "Everyday Movement and Injury Prevention · Track A\n\nPractices gentle ankle movement and supported balance.\n\nEach session takes about 8–10 minutes:\n• Easy walk or march: 2 minutes\n• Ankle circles while seated: 1 minute per side\n• Supported calf raises: 2 sets of 10\n• Supported single-leg balance (Stand on One Foot): up to 30 seconds per side, repeat as comfortable\n• Rest and transitions: 1–2 minutes\n\nExercise guide: The AAOS Foot and Ankle Conditioning Program includes calf raises and supported single-leg balance.\n\nDo 3 sessions a week for 4 weeks. This is one of three Everyday Movement tracks; you can choose a different track each session.\n\nGoal: Practice everyday habits that may help reduce the chance of minor sprains, muscle strains, and repetitive-use irritation. This pathway is for general wellness, not treatment for an existing injury.\n\nWeek 1: Learn the movements and find a comfortable pace.\nWeek 2: Repeat the tracks with steady, controlled movements.\nWeek 3: Practice the habits during everyday tasks, such as carrying groceries or taking work breaks.\nWeek 4: Choose the habits you want to keep using each week.",
+      "difficulty": "Beginner",
+      "specialties": [],
+      "schedule": [
+        ["Easy Walk or March", "Seated Ankle Circles", "Supported Calf Raises", "Stand on One Foot"], "rest", ["Easy Walk or March", "Seated Ankle Circles", "Supported Calf Raises", "Stand on One Foot"], "rest", ["Easy Walk or March", "Seated Ankle Circles", "Supported Calf Raises", "Stand on One Foot"], "rest", "rest",
+        ["Easy Walk or March", "Seated Ankle Circles", "Supported Calf Raises", "Stand on One Foot"], "rest", ["Easy Walk or March", "Seated Ankle Circles", "Supported Calf Raises", "Stand on One Foot"], "rest", ["Easy Walk or March", "Seated Ankle Circles", "Supported Calf Raises", "Stand on One Foot"], "rest", "rest",
+        ["Easy Walk or March", "Seated Ankle Circles", "Supported Calf Raises", "Stand on One Foot"], "rest", ["Easy Walk or March", "Seated Ankle Circles", "Supported Calf Raises", "Stand on One Foot"], "rest", ["Easy Walk or March", "Seated Ankle Circles", "Supported Calf Raises", "Stand on One Foot"], "rest", "rest",
+        ["Easy Walk or March", "Seated Ankle Circles", "Supported Calf Raises", "Stand on One Foot"], "rest", ["Easy Walk or March", "Seated Ankle Circles", "Supported Calf Raises", "Stand on One Foot"], "rest", ["Easy Walk or March", "Seated Ankle Circles", "Supported Calf Raises", "Stand on One Foot"], "rest", "rest"
+      ]
+    },
+    {
+      "name": "Back-Friendly Everyday Lifting",
+      "description": "Everyday Movement and Injury Prevention · Track B\n\nPractices setting up for a light lift and moving without rushing.\n\nEach session takes about 8–12 minutes:\n• Easy walk or march: 2 minutes\n• Practice bending at the hips and knees without lifting anything: 2 minutes\n• Practice picking up and setting down a light object: 3–4 minutes\n• Practice keeping the object close and turning by moving your feet: 2 minutes\n• Rest and transitions: 1–2 minutes\n\nMovement guide: MedlinePlus lifting tips cover staying close to the object, lifting slowly, and avoiding twisting while carrying.\n\nDo 3 sessions a week for 4 weeks. This is one of three Everyday Movement tracks; you can choose a different track each session.\n\nGoal: Practice everyday habits that may help reduce the chance of minor sprains, muscle strains, and repetitive-use irritation. This pathway is for general wellness, not treatment for an existing injury.\n\nWeek 1: Learn the movements and find a comfortable pace.\nWeek 2: Repeat the tracks with steady, controlled movements.\nWeek 3: Practice the habits during everyday tasks, such as carrying groceries or taking work breaks.\nWeek 4: Choose the habits you want to keep using each week.",
+      "difficulty": "Beginner",
+      "specialties": [],
+      "schedule": [
+        ["Easy Walk or March"], "rest", ["Easy Walk or March"], "rest", ["Easy Walk or March"], "rest", "rest",
+        ["Easy Walk or March"], "rest", ["Easy Walk or March"], "rest", ["Easy Walk or March"], "rest", "rest",
+        ["Easy Walk or March"], "rest", ["Easy Walk or March"], "rest", ["Easy Walk or March"], "rest", "rest",
+        ["Easy Walk or March"], "rest", ["Easy Walk or March"], "rest", ["Easy Walk or March"], "rest", "rest"
+      ]
+    },
+    {
+      "name": "Repetitive-Movement Reset",
+      "description": "Everyday Movement and Injury Prevention · Track C\n\nHelps users notice repetitive tasks and build in brief movement breaks.\n\nEach session takes about 8–10 minutes:\n• Check posture and adjust the work area: 2 minutes\n• Gentle shoulder rolls: 1 minute\n• Gentle wrist and finger movements: 2 minutes\n• Practice a short break, then plan when to vary tasks or take another break: 2–3 minutes\n• Rest and transitions: 1–2 minutes\n\nDo 3 sessions a week for 4 weeks. This is one of three Everyday Movement tracks; you can choose a different track each session.\n\nGoal: Practice everyday habits that may help reduce the chance of minor sprains, muscle strains, and repetitive-use irritation. This pathway is for general wellness, not treatment for an existing injury.\n\nWeek 1: Learn the movements and find a comfortable pace.\nWeek 2: Repeat the tracks with steady, controlled movements.\nWeek 3: Practice the habits during everyday tasks, such as carrying groceries or taking work breaks.\nWeek 4: Choose the habits you want to keep using each week.",
+      "difficulty": "Beginner",
+      "specialties": [],
+      "schedule": [
+        ["Gentle Shoulder Rolls", "Gentle Wrist and Finger Movements"], "rest", ["Gentle Shoulder Rolls", "Gentle Wrist and Finger Movements"], "rest", ["Gentle Shoulder Rolls", "Gentle Wrist and Finger Movements"], "rest", "rest",
+        ["Gentle Shoulder Rolls", "Gentle Wrist and Finger Movements"], "rest", ["Gentle Shoulder Rolls", "Gentle Wrist and Finger Movements"], "rest", ["Gentle Shoulder Rolls", "Gentle Wrist and Finger Movements"], "rest", "rest",
+        ["Gentle Shoulder Rolls", "Gentle Wrist and Finger Movements"], "rest", ["Gentle Shoulder Rolls", "Gentle Wrist and Finger Movements"], "rest", ["Gentle Shoulder Rolls", "Gentle Wrist and Finger Movements"], "rest", "rest",
+        ["Gentle Shoulder Rolls", "Gentle Wrist and Finger Movements"], "rest", ["Gentle Shoulder Rolls", "Gentle Wrist and Finger Movements"], "rest", ["Gentle Shoulder Rolls", "Gentle Wrist and Finger Movements"], "rest", "rest"
       ]
     }
   ]
