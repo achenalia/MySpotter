@@ -39,7 +39,10 @@ export function ExerciseCalendar({
                 {dayExercises.length > 0 ? (
                   dayExercises.map((id, j) => <ExerciseButton key={`${id}-${j}`} id={id} />)
                 ) : (
-                  <Text style={styles.emptyText}>—</Text>
+                  <View style={styles.breakCard} accessible accessibilityLabel="Break day">
+                    <Text style={styles.breakTitle}>Break day</Text>
+                    <Text style={styles.breakText}>Rest and recover.</Text>
+                  </View>
                 )}
               </View>
             </View>
@@ -72,5 +75,17 @@ const styles = StyleSheet.create({
   dayCell: { width: 48 },
   dayText: { fontSize: 16, fontWeight: "600", color: colors.text },
   exerciseCell: { flex: 1, gap: spacing.sm },
-  emptyText: { fontSize: 16, color: colors.text, opacity: 0.4 },
+  // Same size as an exercise button, but dashed and muted since there's nothing to open.
+  breakCard: {
+    paddingVertical: spacing.md,
+    paddingHorizontal: spacing.md,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderStyle: "dashed",
+    borderColor: colors.overlayStrong,
+    backgroundColor: colors.overlaySoft,
+    gap: spacing.sm / 2,
+  },
+  breakTitle: { fontSize: 18, fontWeight: "600", color: colors.muted },
+  breakText: { fontSize: 14, color: colors.muted },
 });
