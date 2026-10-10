@@ -94,7 +94,7 @@ export function PoseCamera({ onPose, showSkeleton = true }: PoseCameraProps) {
     left: 0,
     width: "100%",
     height: "100%",
-    objectFit: "contain" as const,
+    objectFit: "cover" as const,
     transform: "scaleX(-1)", // mirror view (landmark data is unaffected)
   };
 
@@ -106,7 +106,7 @@ export function PoseCamera({ onPose, showSkeleton = true }: PoseCameraProps) {
         left: 0,
         right: 0,
         bottom: 0,
-        background: "var(--some-theme-palette-color)", // Update this line with the correct theme variable
+        background: "transparent",
       }}
     >
       <video ref={videoRef} playsInline muted style={layer} />

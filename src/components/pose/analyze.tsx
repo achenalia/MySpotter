@@ -61,7 +61,7 @@ export function createAnalyzer(ex: Exercise): Analyzer {
 
     // 2. Make sure the needed joints are actually visible
     if (parts.some((p) => (lm[LM[p][s]]?.visibility ?? 0) < 0.6)) {
-      return snapshot(["Make sure your whole body is in frame"]);
+      return snapshot(["Make sure your whole body is in frame!"]);
     }
 
     // 3. Smoothed angles for every joint
@@ -102,7 +102,7 @@ export function createAnalyzer(ex: Exercise): Analyzer {
             (c.atLeast !== undefined && v < c.atLeast)
           );
         });
-        repFeedback = failed ? failed.message : "Good rep";
+        repFeedback = failed ? failed.message : "Good rep!";
       }
     }
 
