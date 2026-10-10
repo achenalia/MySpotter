@@ -4,8 +4,6 @@ import type { ComponentProps } from "react";
 
 type ScreenOptions = NonNullable<ComponentProps<typeof Stack.Screen>["options"]>;
 
-// Pop-ups: shown over the current screen with a transparent background so
-// <Sheet> can draw the dark backdrop and slide the card up. Closing fades out.
 const sheet: ScreenOptions = {
   presentation: "transparentModal",
   animation: "fade",
@@ -26,10 +24,14 @@ export default function RootLayout() {
       <Stack.Screen name="safety" options={{ headerShown: true, title: "Safety Guidelines" }} />
       <Stack.Screen name="pose" options={{ headerShown: true, title: "Workout" }} />
       <Stack.Screen name="pathways" />
-
       <Stack.Screen name="pathway/[id]" options={sheet} />
       <Stack.Screen name="exercise/[id]/index" options={sheet} />
       <Stack.Screen name="exercise/[id]/safety" options={sheet} />
+      <Stack.Screen name="therapy-plan/index" />
+      <Stack.Screen name="therapy-plan/review" />
+      <Stack.Screen name="therapy-plan/confirm" />
+      <Stack.Screen name="therapy-plan/saved" />
+      <Stack.Screen name="therapy-plan/session" />
     </Stack>
   );
 }
