@@ -3,6 +3,8 @@
     {
       "name": "Push-Up",
       "category": "Strength",
+      "difficulty": "Intermediate",
+      "specialties": [],
       "description": "A bodyweight exercise that works the chest, shoulders and triceps.",
       "equipment": [],
       "instructions": [
@@ -22,6 +24,8 @@
     {
       "name": "Squat",
       "category": "Strength",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors"],
       "description": "A lower-body exercise that works the quads, glutes and hamstrings.",
       "equipment": [],
       "instructions": [
@@ -40,6 +44,8 @@
     {
       "name": "Plank",
       "category": "Strength",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors", "For Injury Recovery"],
       "description": "A core exercise that builds stability through the abs, back and shoulders.",
       "equipment": ["Exercise mat (optional)"],
       "instructions": [
@@ -50,9 +56,7 @@
       ],
       "videoUrl": "https://www.youtube.com/watch?v=REPLACE_ME",
       "sources": [],
-      "safety": "Keep your hips level and your neck in line with your spine. If your lower back starts to ache, drop to your knees or rest.",
-      "difficulty": "Beginner",
-      "specialties": ["For Seniors", "For Injury Recovery"]
+      "safety": "Keep your hips level and your neck in line with your spine. If your lower back starts to ache, drop to your knees or rest."
     }
   ],
   "pathways": [

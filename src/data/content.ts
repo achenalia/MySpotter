@@ -41,7 +41,11 @@ export type Pathway = {
   description: string;
   /** Total length in days, taken from the schedule. */
   days: number;
+  /** The pathway's own difficulty, or else its hardest exercise's. */
   difficulty?: Difficulty;
+  /** Every category among its exercises. */
+  categories: Category[];
+  /** Its own specialties, plus any that every one of its exercises has. */
   specialties: Specialty[];
   /** Exercise id for each day. Undefined means a rest day. */
   exerciseIds: (string | undefined)[];
@@ -167,6 +171,27 @@ export const exercises: Exercise[] = dedupe(
 );
 
 const exerciseIds = new Set(exercises.map((exercise) => exercise.id));
+const exercisesById = new Map(exercises.map((exercise) => [exercise.id, exercise]));
+
+/** Tags a pathway picks up from the exercises in its schedule. */
+function tagsFromExercises(ids: (string | undefined)[]) {
+  const included = [...new Set(ids)]
+    .map((id) => (id ? exercisesById.get(id) : undefined))
+    .filter((exercise): exercise is Exercise => !!exercise);
+
+  const categories = CATEGORIES.filter((category) =>
+    included.some((exercise) => exercise.category === category)
+  );
+  const sharedSpecialties = SPECIALTIES.filter(
+    (specialty) =>
+      included.length > 0 && included.every((exercise) => exercise.specialties.includes(specialty))
+  );
+  const hardest = [...DIFFICULTIES]
+    .reverse()
+    .find((level) => included.some((exercise) => exercise.difficulty === level));
+
+  return { categories, sharedSpecialties, hardest };
+}
 
 export const pathways: Pathway[] = dedupe(
   rawPathways
@@ -183,13 +208,20 @@ export const pathways: Pathway[] = dedupe(
         }
         return id;
       });
+      const owner = `Pathway "${name}"`;
+      const fromExercises = tagsFromExercises(ids);
+      const ownSpecialties = specialtyTags(entry.specialties, owner);
       return {
         id: toId(name),
         name,
         description: text(entry.description),
         days: ids.length,
-        difficulty: difficultyTag(entry.difficulty, `Pathway "${name}"`),
-        specialties: specialtyTags(entry.specialties, `Pathway "${name}"`),
+        difficulty: difficultyTag(entry.difficulty, owner) ?? fromExercises.hardest,
+        categories: fromExercises.categories,
+        specialties: SPECIALTIES.filter(
+          (specialty) =>
+            ownSpecialties.includes(specialty) || fromExercises.sharedSpecialties.includes(specialty)
+        ),
         exerciseIds: ids,
       };
     }),

@@ -23,8 +23,17 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 }
 
 export function ExerciseCard({ exercise, onContinue }: ExerciseCardProps) {
-  const { name, category, description, equipment, instructions, videoUrl, sources, difficulty } =
-    exercise;
+  const {
+    name,
+    category,
+    description,
+    equipment,
+    instructions,
+    videoUrl,
+    sources,
+    difficulty,
+    specialties,
+  } = exercise;
   const hasVideo = /^https?:\/\//.test(videoUrl.trim());
 
   return (
@@ -35,12 +44,11 @@ export function ExerciseCard({ exercise, onContinue }: ExerciseCardProps) {
           <Text style={styles.name} numberOfLines={2}>
             {name}
           </Text>
-          {category || difficulty ? (
-            <View style={styles.subtitleRow}>
-              {category ? <Text style={styles.category}>{category}</Text> : null}
-              <Tags difficulty={difficulty} />
-            </View>
-          ) : null}
+          <Tags
+            categories={category ? [category] : []}
+            difficulty={difficulty}
+            specialties={specialties}
+          />
         </View>
       </View>
 
@@ -118,8 +126,6 @@ const styles = StyleSheet.create({
   },
   titleBlock: { flex: 1, gap: spacing.xs },
   name: { fontSize: 24, fontWeight: "700", color: colors.text },
-  subtitleRow: { flexDirection: "row", alignItems: "center", flexWrap: "wrap", gap: spacing.sm },
-  category: { fontSize: 15, fontWeight: "600", color: colors.muted },
   content: { padding: spacing.md, gap: spacing.lg },
   section: { gap: spacing.sm },
   sectionTitle: { fontSize: 18, fontWeight: "700", color: colors.text },

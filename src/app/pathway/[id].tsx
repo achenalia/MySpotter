@@ -39,7 +39,11 @@ export default function PathwayScreen() {
               <Text style={styles.label}>Time: </Text>
               {pathway.days} {pathway.days === 1 ? "day" : "days"}
             </Text>
-            <Tags difficulty={pathway.difficulty} specialties={pathway.specialties} />
+            <Tags
+              categories={pathway.categories}
+              difficulty={pathway.difficulty}
+              specialties={pathway.specialties}
+            />
           </View>
 
           <ExerciseCalendar rows={pathway.days} exerciseIds={pathway.exerciseIds} />

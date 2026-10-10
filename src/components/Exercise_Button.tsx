@@ -21,14 +21,19 @@ export function ExerciseButton({ id }: ExerciseButtonProps) {
     <Pressable
       onPress={openExercise}
       accessibilityRole="button"
-      accessibilityLabel={[`Open ${exercise.name}`, exercise.difficulty].filter(Boolean).join(", ")}
+      accessibilityLabel={[`Open ${exercise.name}`, exercise.category, exercise.difficulty]
+        .filter(Boolean)
+        .join(", ")}
       style={({ pressed }) => [styles.button, pressed && styles.pressed]}
     >
       <View style={styles.text}>
         <Text style={styles.name} numberOfLines={1}>
           {exercise.name}
         </Text>
-        <Tags difficulty={exercise.difficulty} />
+        <Tags
+          categories={exercise.category ? [exercise.category] : []}
+          difficulty={exercise.difficulty}
+        />
       </View>
       <Text style={styles.chevron}>›</Text>
     </Pressable>
