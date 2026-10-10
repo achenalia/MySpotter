@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { BackButton } from "@/components/Back_Button";
 import { PathwayButton } from "@/components/Pathway_Button";
 import { colors, spacing } from "@/constants/theme";
-import { pathways } from "@/data/pathways";
+import { pathways } from "@/data/content";
 
 const generalPathways = pathways.filter((pathway) => !pathway.requiresClinicianPlan);
 const recoveryPathways = pathways.filter((pathway) => pathway.requiresClinicianPlan);
