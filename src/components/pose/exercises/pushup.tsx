@@ -10,9 +10,9 @@ export const pushup: Exercise = {
   },
   repAngle: { joint: "elbow", downBelow: 110, upAbove: 155 },
   repChecks: [
-    { joint: "elbow", stat: "min", atMost: 90, message: "Lower your chest a bit more" },
+    { joint: "elbow", stat: "min", atMost: 90, message: "Lower your chest a bit more." },
   ],
   checks: [
-    { joint: "bodyLine", phase: "any", min: 160, message: "Keep your body in a straight line" },
+    { joint: "bodyLine", phase: "any", min: 160, message: "Keep your body in a straight line." },
   ],
 };
