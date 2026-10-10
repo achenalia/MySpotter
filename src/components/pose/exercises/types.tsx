@@ -10,9 +10,11 @@ export type Exercise = {
   joints: Record<string, Joint>;
 
   // Defines what counts as one rep (goes "down" below one angle, "up" above another)
-  repAngle: { joint: string; downBelow: number; upAbove: number };
+  repAngle: { joint: string; downBelow: number; upAbove: number; invert?: boolean };
 
   // Judged at the end of each rep, using the lowest/highest angle reached
+  repSuccessMessage?: string;
+
   repChecks?: {
     joint: string;
     stat: "min" | "max";

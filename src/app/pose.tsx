@@ -1,4 +1,5 @@
 import { useCallback, useRef, useState } from "react";
+import { SquatDemo } from "@/components/pose/SquatDemo";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { PoseCamera } from "@/components/pose/PoseCamera";
 import type { Landmark } from "@/components/pose/types";
@@ -26,7 +27,12 @@ const findPoseExercise = (id?: string) => {
   return exercises.find((e) => e.id.replace(/[^a-z0-9]/g, "") === key) ?? exercises[0];
 };
 
-export default function PoseTest() {
+export default function PoseScreen() {
+  const { demo } = useLocalSearchParams<{ demo?: string }>();
+  return demo === "1" ? <SquatDemo /> : <PoseTest />;
+}
+
+function PoseTest() {
   const { exercise: exerciseParam } = useLocalSearchParams<{ exercise?: string }>();
   const [exercise, setExercise] = useState<Exercise>(() => findPoseExercise(exerciseParam));
   const [state, setState] = useState<ExerciseState>(initialState);

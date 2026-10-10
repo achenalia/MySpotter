@@ -1,10 +1,17 @@
+import { useEffect } from "react";
 import { Text, View } from "react-native";
 import type { PoseCameraProps } from "./types";
 
-export function PoseCamera(_props: PoseCameraProps) {
+export function PoseCamera({ active = true, onStatusChange }: PoseCameraProps) {
+  useEffect(() => {
+    if (active) {
+      onStatusChange?.("error", "Camera motion tracking is currently available in a web browser only.");
+    }
+  }, [active, onStatusChange]);
+
   return (
     <View style={{ padding: 16 }}>
-      <Text>Pose detection is only available on web for now.</Text>
+      <Text>Camera motion tracking is currently available in a web browser only.</Text>
     </View>
   );
 }

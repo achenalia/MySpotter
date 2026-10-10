@@ -1,10 +1,11 @@
-import { Stack } from "expo-router";
-import { FlatList, StyleSheet, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { BackButton } from "@/components/Back_Button";
+import { Button } from "@/components/Button";
 import { PathwayButton } from "@/components/Pathway_Button";
 import { colors, spacing } from "@/constants/theme";
 import { pathways } from "@/data/content";
+import { router, Stack } from "expo-router";
+import { FlatList, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const pathwaysByLength = [...pathways].sort((a, b) => a.days - b.days);
 
@@ -23,6 +24,14 @@ export default function PathwaysScreen() {
         keyExtractor={(pathway) => pathway.id}
         renderItem={({ item }) => <PathwayButton id={item.id} />}
         contentContainerStyle={styles.list}
+        ListHeaderComponent={
+          <View style={styles.uploadSection}>
+            <Button
+              title="Upload my therapy plan"
+              onPress={() => router.push("/therapy-plan")}
+            />
+          </View>
+        }
         ListEmptyComponent={<Text style={styles.empty}>No pathways yet.</Text>}
       />
     </SafeAreaView>
@@ -40,5 +49,6 @@ const styles = StyleSheet.create({
   },
   title: { flex: 1, fontSize: 24, fontWeight: "700", color: colors.text },
   list: { padding: spacing.md, gap: spacing.md },
+  uploadSection: { paddingBottom: spacing.md },
   empty: { fontSize: 16, color: colors.text, opacity: 0.6, textAlign: "center" },
 });
