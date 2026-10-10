@@ -6,6 +6,7 @@ import { colors, spacing } from "@/constants/theme";
 import { Affirmation } from "@/components/Affirmation";
 import { StreakCounter } from "@/components/StreakCounter";
 import { useState } from "react";
+import { Directory } from "@/components/Directory";
 
 // RANDOMLY CHOOSES AFFIRMATION FROM THESE
 const affirmations = [
@@ -32,6 +33,18 @@ export default function Home() {
           <Text>TEST CARD.</Text>
           <Button title="Get started" onPress={() => console.log("pressed")} />
         </Card>
+      <Directory
+        items={[
+          {
+            label: "Settings",
+            href: "/settings"
+          },
+          {
+            label: "About",
+            href: "/about"
+          },
+        ]}
+      />
       </ScrollView>
     </SafeAreaView>
   );
