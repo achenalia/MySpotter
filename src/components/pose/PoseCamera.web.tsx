@@ -120,7 +120,7 @@ export function PoseCamera({
         left: 0,
         right: 0,
         bottom: 0,
-        background: "var(--some-theme-palette-color)", // Update this line with the correct theme variable
+        background: "#000",
       }}
     >
       <video ref={videoRef} playsInline muted style={layer} />

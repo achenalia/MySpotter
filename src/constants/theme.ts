@@ -1,26 +1,9 @@
 export const colors = {
   background: "#F8F7F2",
   surface: "#DCE8DF",
-  surfaceAlt: "#EFF3EE",
-  panel: "#FFFFFF",
   text: "#202923",
-  muted: "#58665a",
   primary: "#536258",
   primaryText: "#EFF3EE",
-  border: "#dfe3d8",
-  placeholder: "#6d7a74",
-  subtle: "#a1a1aa",
-  dark: "#111111",
-  darkSecondary: "#18181b",
-  darkTertiary: "#27272a",
-  success: "#4ade80",
-  warning: "#f87171",
-  white: "#FFFFFF",
-  black: "#000000",
-  overlay: "rgba(32,41,35,0.06)",
-  overlaySoft: "rgba(83, 98, 88, 0.08)",
-  overlayStrong: "rgba(83, 98, 88, 0.12)",
-  outline: "rgba(32,41,35,0.12)",
 };
 
-export const spacing = { xs: 4, sm: 8, md: 16, lg: 24 };
+export const spacing = { sm: 8, md: 16, lg: 24 };

@@ -2,16 +2,9 @@ import { router, Stack, useLocalSearchParams } from "expo-router";
 import { Linking, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { BackButton } from "@/components/Back_Button";
-<<<<<<< HEAD
 import { colors, spacing } from "@/constants/theme";
 import { getPathway } from "@/data/pathways";
 import { getExercise } from "@/data/exercises";
-=======
-import { ExerciseCalendar } from "@/components/Exercise_Calendar";
-import { Tags } from "@/components/Tags";
-import { colors, spacing } from "@/constants/theme";
-import { getPathway } from "@/data/content";
->>>>>>> origin/main
 
 export default function PathwayScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -31,33 +24,24 @@ export default function PathwayScreen() {
       <Stack.Screen options={{ headerShown: false }} />
 
       <View style={styles.header}>
-        <BackButton variant="close" />
+        <BackButton />
         <Text style={styles.name} numberOfLines={2}>
           {pathway.name}
         </Text>
       </View>
 
-<<<<<<< HEAD
       <ScrollView contentContainerStyle={styles.content}>
         <Text style={styles.body}>{pathway.description}</Text>
-=======
-      <View style={styles.content}>
-        {pathway.description ? <Text style={styles.body}>{pathway.description}</Text> : null}
->>>>>>> origin/main
 
         <View style={pathway.requiresClinicianPlan ? styles.recoveryNotice : styles.proposedNotice}>
           <Text style={styles.noticeTitle}>
             {pathway.requiresClinicianPlan ? "Recovery · clinician plan required" : pathway.scheduleLabel}
           </Text>
-<<<<<<< HEAD
           <Text style={styles.body}>
             {pathway.requiresClinicianPlan
               ? "These draft tracks are not a rehabilitation prescription. Use only movements selected and timed in an individualized plan from your healthcare professional."
               : "The attached document's schedule is a proposed app routine, not an individualized prescription."}
           </Text>
-=======
-          <Tags difficulty={pathway.difficulty} specialties={pathway.specialties} />
->>>>>>> origin/main
         </View>
 
         <View style={styles.details}>

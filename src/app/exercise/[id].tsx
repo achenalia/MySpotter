@@ -1,8 +1,8 @@
-import { Stack, router, useLocalSearchParams } from "expo-router";
+import { Stack, useLocalSearchParams } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 import { ExerciseCard } from "@/components/Exercise_Card";
 import { colors } from "@/constants/theme";
-import { getExercise } from "@/data/content";
+import { getExercise } from "@/data/exercises";
 
 export default function ExerciseScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -21,17 +21,7 @@ export default function ExerciseScreen() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <ExerciseCard
-<<<<<<< HEAD:src/app/exercise/[id].tsx
         exercise={exercise}
-=======
-        name={exercise.name}
-        description={exercise.description}
-        videoUrl={exercise.videoUrl}
-        difficulty={exercise.difficulty}
-        onContinue={() =>
-          router.push({ pathname: "/exercise/[id]/safety", params: { id: exercise.id } })
-        }
->>>>>>> origin/main:src/app/exercise/[id]/index.tsx
       />
     </>
   );

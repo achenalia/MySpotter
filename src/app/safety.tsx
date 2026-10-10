@@ -1,4 +1,3 @@
-import { router } from "expo-router";
 import { useState } from "react";
 import {
   Linking,
@@ -12,14 +11,14 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { colors, spacing } from "@/constants/theme";
 
 const palette = {
-  background: colors.background,
-  surface: colors.panel,
-  surfaceAlt: colors.surfaceAlt,
-  sage: colors.surface,
-  sageDark: colors.primary,
-  ink: colors.text,
-  muted: colors.muted,
-  border: colors.border,
+  background: "#f9f4ea",
+  surface: "#ffffff",
+  surfaceAlt: "#eef3eb",
+  sage: "#dfeadf",
+  sageDark: "#506b51",
+  ink: "#1b2b1d",
+  muted: "#58665a",
+  border: "#dfe3d8",
 };
 
 const sections = [
@@ -246,11 +245,6 @@ export default function Safety() {
   return (
     <SafeAreaView style={styles.safe}>
       <ScrollView contentContainerStyle={styles.content}>
-        <View style={styles.headerRow}>
-          <Pressable onPress={() => router.back()} style={styles.backButton} accessibilityRole="button">
-            <Text style={styles.backButtonText}>← Back</Text>
-          </Pressable>
-        </View>
         <Text accessibilityRole="header" style={styles.heading}>
           Safety
         </Text>
@@ -314,12 +308,6 @@ const styles = StyleSheet.create({
     color: palette.ink,
     marginTop: spacing.sm,
   },
-  headerRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    marginBottom: spacing.md,
-  },
   generalNote: {
     fontSize: 14,
     lineHeight: 20,
@@ -337,7 +325,7 @@ const styles = StyleSheet.create({
     padding: spacing.md,
     borderWidth: 1,
     borderColor: palette.border,
-    shadowColor: colors.black,
+    shadowColor: "#000",
     shadowOpacity: 0.04,
     shadowRadius: 8,
     shadowOffset: { width: 0, height: 4 },
@@ -384,7 +372,7 @@ const styles = StyleSheet.create({
     borderColor: palette.border,
     padding: spacing.md,
     gap: spacing.sm,
-    shadowColor: colors.black,
+    shadowColor: "#000",
     shadowOpacity: 0.03,
     shadowRadius: 10,
     shadowOffset: { width: 0, height: 4 },
@@ -493,19 +481,5 @@ const styles = StyleSheet.create({
     lineHeight: 18,
     color: palette.muted,
     marginTop: 4,
-  },
-  backButton: {
-    alignSelf: "flex-start",
-    backgroundColor: palette.surface,
-    borderRadius: 999,
-    borderWidth: 1,
-    borderColor: palette.border,
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm,
-  },
-  backButtonText: {
-    fontSize: 16,
-    color: palette.sageDark,
-    fontWeight: "700",
   },
 });

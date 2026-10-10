@@ -1,11 +1,10 @@
 import { router } from "expo-router";
-import { Pressable, StyleSheet, Text, View } from "react-native";
-import { Tags } from "@/components/Tags";
+import { Pressable, StyleSheet, Text } from "react-native";
 import { colors, spacing } from "@/constants/theme";
-import { getExercise } from "@/data/content";
+import { getExercise } from "@/data/exercises";
 
 type ExerciseButtonProps = {
-  /** The id of an exercise in src/data/content.json. */
+  /** The id of an exercise in src/data/exercises.ts. */
   id: string;
 };
 
@@ -21,15 +20,12 @@ export function ExerciseButton({ id }: ExerciseButtonProps) {
     <Pressable
       onPress={openExercise}
       accessibilityRole="button"
-      accessibilityLabel={[`Open ${exercise.name}`, exercise.difficulty].filter(Boolean).join(", ")}
+      accessibilityLabel={`Open ${exercise.name}`}
       style={({ pressed }) => [styles.button, pressed && styles.pressed]}
     >
-      <View style={styles.text}>
-        <Text style={styles.name} numberOfLines={1}>
-          {exercise.name}
-        </Text>
-        <Tags difficulty={exercise.difficulty} />
-      </View>
+      <Text style={styles.name} numberOfLines={1}>
+        {exercise.name}
+      </Text>
       <Text style={styles.chevron}>›</Text>
     </Pressable>
   );
@@ -46,7 +42,6 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
   },
   pressed: { opacity: 0.7 },
-  text: { flex: 1, gap: spacing.sm / 2 },
-  name: { fontSize: 18, fontWeight: "600", color: colors.text },
+  name: { flex: 1, fontSize: 18, fontWeight: "600", color: colors.text },
   chevron: { fontSize: 24, color: colors.primary },
 });
