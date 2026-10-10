@@ -21,7 +21,7 @@ export const initialState: ExerciseState = {
 
 export type Analyzer = (lm: Landmark[]) => ExerciseState;
 
-export function createAnalyzer(ex: Exercise): Analyzer {
+export function createAnalyzer(ex: Exercise, startingReps = 0): Analyzer {
   const ALPHA = 0.4; // smoothing: lower = smoother but laggier
   const CUE_FRAMES = 8; // frames a problem must persist before a cue shows
   const SWITCH_MARGIN = 0.5; // how much more visible the other side must be to switch
@@ -32,7 +32,8 @@ export function createAnalyzer(ex: Exercise): Analyzer {
   let smoothed: Record<string, number> = {};
   const cueCounts: Record<string, number> = {};
   let phase: "up" | "down" = "up";
-  let reps = 0;
+  let reps = startingReps;
+  let armed = false;
   let repFeedback: string | null = null;
   let repStats: Record<string, { min: number; max: number }> = {};
 
@@ -48,6 +49,9 @@ export function createAnalyzer(ex: Exercise): Analyzer {
     else if (best !== side && Math.abs(vL - vR) > SWITCH_MARGIN) {
       side = best;
       smoothed = {};
+      phase = "up";
+      armed = false;
+      repStats = {};
     }
     const s = side;
 
@@ -61,6 +65,10 @@ export function createAnalyzer(ex: Exercise): Analyzer {
 
     // 2. Make sure the needed joints are actually visible
     if (parts.some((p) => (lm[LM[p][s]]?.visibility ?? 0) < 0.6)) {
+      armed = false;
+      phase = "up";
+      smoothed = {};
+      repStats = {};
       return snapshot(["Make sure your whole body is in frame!"]);
     }
 
@@ -77,7 +85,13 @@ export function createAnalyzer(ex: Exercise): Analyzer {
 
     // 4. Rep counting
     const { joint, downBelow, upAbove } = ex.repAngle;
-    const a = angles[joint];
+    const a = ex.repAngle.invert ? 180 - angles[joint] : angles[joint];
+
+    // Require the starting posture after startup, pause or tracking loss.
+    if (!armed) {
+      if (a > upAbove) armed = true;
+      else return snapshot(["Return to the starting position before counting."]);
+    }
 
     if (phase === "up" && a < downBelow) {
       phase = "down";
@@ -102,7 +116,7 @@ export function createAnalyzer(ex: Exercise): Analyzer {
             (c.atLeast !== undefined && v < c.atLeast)
           );
         });
-        repFeedback = failed ? failed.message : "Good rep!";
+        repFeedback = failed ? failed.message : ex.repSuccessMessage ?? "Good rep!";
       }
     }
 
