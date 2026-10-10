@@ -1,12 +1,13 @@
 import { Stack } from "expo-router";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { BackButton } from "@/components/Back_Button";
 import { PathwayButton } from "@/components/Pathway_Button";
 import { colors, spacing } from "@/constants/theme";
 import { pathways } from "@/data/pathways";
 
-const pathwaysByLength = [...pathways].sort((a, b) => a.days - b.days);
+const generalPathways = pathways.filter((pathway) => !pathway.requiresClinicianPlan);
+const recoveryPathways = pathways.filter((pathway) => pathway.requiresClinicianPlan);
 
 export default function PathwaysScreen() {
   return (
@@ -18,13 +19,24 @@ export default function PathwaysScreen() {
         <Text style={styles.title}>Pathways</Text>
       </View>
 
-      <FlatList
-        data={pathwaysByLength}
-        keyExtractor={(pathway) => pathway.id}
-        renderItem={({ item }) => <PathwayButton id={item.id} />}
-        contentContainerStyle={styles.list}
-        ListEmptyComponent={<Text style={styles.empty}>No pathways yet.</Text>}
-      />
+      <ScrollView contentContainerStyle={styles.list}>
+        <Text style={styles.intro}>
+          Routine timings are proposals, not individual exercise prescriptions.
+        </Text>
+
+        <View style={styles.section}>
+          <Text accessibilityRole="header" style={styles.sectionTitle}>General movement routines</Text>
+          {generalPathways.map((pathway) => <PathwayButton key={pathway.id} id={pathway.id} />)}
+        </View>
+
+        <View style={styles.recoverySection}>
+          <Text accessibilityRole="header" style={styles.recoveryTitle}>Recovery pathways</Text>
+          <Text style={styles.recoveryNote}>
+            These drafts require an individualized plan from a healthcare professional. They are not available to start.
+          </Text>
+          {recoveryPathways.map((pathway) => <PathwayButton key={pathway.id} id={pathway.id} />)}
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -39,6 +51,11 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
   },
   title: { flex: 1, fontSize: 24, fontWeight: "700", color: colors.text },
-  list: { padding: spacing.md, gap: spacing.md },
-  empty: { fontSize: 16, color: colors.text, opacity: 0.6, textAlign: "center" },
+  list: { padding: spacing.md, gap: spacing.lg, maxWidth: 860, width: "100%", alignSelf: "center" },
+  intro: { fontSize: 17, lineHeight: 25, color: colors.text },
+  section: { gap: spacing.md },
+  sectionTitle: { fontSize: 21, lineHeight: 28, fontWeight: "800", color: colors.text },
+  recoverySection: { gap: spacing.md, paddingTop: spacing.md, borderTopWidth: 2, borderTopColor: "#d5a39a" },
+  recoveryTitle: { fontSize: 21, lineHeight: 28, fontWeight: "800", color: "#8c3029" },
+  recoveryNote: { fontSize: 16, lineHeight: 23, color: colors.text, backgroundColor: "#fff0ec", padding: spacing.md, borderRadius: 8 },
 });

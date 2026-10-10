@@ -21,9 +21,7 @@ export default function ExerciseScreen() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <ExerciseCard
-        name={exercise.name}
-        description={exercise.description}
-        videoUrl={exercise.videoUrl}
+        exercise={exercise}
       />
     </>
   );

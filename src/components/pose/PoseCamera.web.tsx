@@ -15,7 +15,11 @@ const importFromUrl = new Function("url", "return import(url)") as (
 ) => Promise<typeof Tasks>;
 
 // Fills its parent, so the parent decides how big the camera is
-export function PoseCamera({ onPose, showSkeleton = true }: PoseCameraProps) {
+export function PoseCamera({
+  onPose,
+  showSkeleton = true,
+  enabled = true,
+}: PoseCameraProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -26,6 +30,16 @@ export function PoseCamera({ onPose, showSkeleton = true }: PoseCameraProps) {
   }, [onPose]);
 
   useEffect(() => {
+    if (!enabled) {
+      const video = videoRef.current;
+      if (video && video.srcObject) {
+        const tracks = (video.srcObject as MediaStream).getTracks();
+        tracks.forEach((track) => track.stop());
+        video.srcObject = null;
+      }
+      return;
+    }
+
     let landmarker: Tasks.PoseLandmarker | undefined;
     let stream: MediaStream | undefined;
     let raf = 0;
@@ -84,7 +98,7 @@ export function PoseCamera({ onPose, showSkeleton = true }: PoseCameraProps) {
       stream?.getTracks().forEach((t) => t.stop());
       landmarker?.close();
     };
-  }, [showSkeleton]);
+  }, [enabled, showSkeleton]);
 
   // Both layers fill the container and use the same object-fit,
   // so the skeleton lines up with the video even when it's letterboxed.
