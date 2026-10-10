@@ -1,7 +1,8 @@
 // Loads exercises and pathways from content.json. Only `name` is required;
 // every other field falls back to a blank placeholder. Ids are generated from
-// names ("Push-Up" -> "push-up"), and pathway schedules list exercise names,
-// with "rest" for rest days. Tags must be one of the options below.
+// names ("Push-Up" -> "push-up"). Each day in a pathway schedule is an
+// exercise name, a list of names for several exercises that day, or "rest".
+// Tags must be one of the options below.
 import content from "./content.json";
 
 export const DIFFICULTIES = ["Beginner", "Intermediate", "Advanced"] as const;
@@ -49,8 +50,16 @@ export type Pathway = {
   categories: Category[];
   /** Its own specialties, plus any that every one of its exercises has. */
   specialties: Specialty[];
-  /** Exercise id for each day. Undefined means a rest day. */
-  exerciseIds: (string | undefined)[];
+  /** Exercise ids for each day. An empty list means a rest day. */
+  exerciseIds: string[][];
+  /** Optional swap (e.g. for a back injury): replaces every session's exercises when turned on. */
+  alternative?: PathwayAlternative;
+};
+
+export type PathwayAlternative = {
+  /** Button text, e.g. "Back injury alternatives". */
+  label: string;
+  exerciseIds: string[];
 };
 
 type RawEntry = Record<string, unknown>;
@@ -177,9 +186,9 @@ const exerciseIds = new Set(exercises.map((exercise) => exercise.id));
 const exercisesById = new Map(exercises.map((exercise) => [exercise.id, exercise]));
 
 /** Tags a pathway picks up from the exercises in its schedule. */
-function tagsFromExercises(ids: (string | undefined)[]) {
-  const included = [...new Set(ids)]
-    .map((id) => (id ? exercisesById.get(id) : undefined))
+function tagsFromExercises(days: string[][]) {
+  const included = [...new Set(days.flat())]
+    .map((id) => exercisesById.get(id))
     .filter((exercise): exercise is Exercise => !!exercise);
 
   const categories = CATEGORIES.filter((category) =>
@@ -196,24 +205,40 @@ function tagsFromExercises(ids: (string | undefined)[]) {
   return { categories, sharedSpecialties, hardest };
 }
 
+/** Reads a pathway's "alternatives": { "label": "...", "exercises": ["Exercise name", ...] }. */
+function alternativeFor(value: unknown, owner: string): PathwayAlternative | undefined {
+  if (!value || typeof value !== "object") return undefined;
+  const entry = value as RawEntry;
+  const exerciseIdsForSwap = textList(entry.exercises).map((exerciseName) => {
+    const id = toId(exerciseName);
+    if (!exerciseIds.has(id)) warn(`${owner} alternatives: no exercise named "${exerciseName}".`);
+    return id;
+  });
+  if (exerciseIdsForSwap.length === 0) return undefined;
+  return { label: text(entry.label).trim() || "Alternatives", exerciseIds: exerciseIdsForSwap };
+}
+
 export const pathways: Pathway[] = dedupe(
   rawPathways
     .filter((entry, i) => hasName(entry, "Pathway", i))
     .map((entry) => {
       const name = entry.name.trim();
       const schedule = Array.isArray(entry.schedule) ? entry.schedule : [];
-      const ids = schedule.map((day, i) => {
-        const dayName = text(day).trim();
-        if (!dayName || dayName.toLowerCase() === "rest") return undefined;
-        const id = toId(dayName);
-        if (!exerciseIds.has(id)) {
-          warn(`Pathway "${name}" day ${i + 1}: no exercise named "${dayName}".`);
-        }
-        return id;
-      });
+      const ids = schedule.map((day, i) =>
+        textList(day)
+          .filter((dayName) => dayName.toLowerCase() !== "rest")
+          .map((dayName) => {
+            const id = toId(dayName);
+            if (!exerciseIds.has(id)) {
+              warn(`Pathway "${name}" day ${i + 1}: no exercise named "${dayName}".`);
+            }
+            return id;
+          })
+      );
       const owner = `Pathway "${name}"`;
       const fromExercises = tagsFromExercises(ids);
       const ownSpecialties = specialtyTags(entry.specialties, owner);
+      const alternative = alternativeFor(entry.alternatives, owner);
       return {
         id: toId(name),
         name,
@@ -226,6 +251,7 @@ export const pathways: Pathway[] = dedupe(
             ownSpecialties.includes(specialty) || fromExercises.sharedSpecialties.includes(specialty)
         ),
         exerciseIds: ids,
+        alternative,
       };
     }),
   "pathway"

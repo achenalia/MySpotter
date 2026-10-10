@@ -122,9 +122,10 @@ export default function Home() {
 
   const matchesSelectedTags = (item: { difficulty?: Difficulty; specialties: Specialty[] }) => {
     const matchesDifficulty = !selectedDifficulty || item.difficulty === selectedDifficulty;
-    const matchesSpecialty =
-      selectedSpecialties.length === 0 ||
-      item.specialties.some((specialty) => selectedSpecialties.includes(specialty));
+    // Every selected Focus tag must be present (e.g. For Seniors AND For Injury Recovery).
+    const matchesSpecialty = selectedSpecialties.every((specialty) =>
+      item.specialties.includes(specialty)
+    );
 
     return matchesDifficulty && matchesSpecialty;
   };

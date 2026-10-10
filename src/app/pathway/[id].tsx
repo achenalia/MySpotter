@@ -1,5 +1,6 @@
 import { useLocalSearchParams } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
+import { useState } from "react";
+import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { BackButton } from "@/components/Back_Button";
 import { ExerciseCalendar } from "@/components/Exercise_Calendar";
 import { Sheet } from "@/components/Sheet";
@@ -7,9 +8,13 @@ import { Tags } from "@/components/Tags";
 import { colors, spacing } from "@/constants/theme";
 import { getPathway } from "@/data/content";
 
+// The whole pop-up scrolls, so the calendar gets a fixed height of its own.
+const CALENDAR_HEIGHT = 400;
+
 export default function PathwayScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const pathway = getPathway(id);
+  const [useAlternative, setUseAlternative] = useState(false);
 
   if (!pathway) {
     return (
@@ -21,6 +26,13 @@ export default function PathwayScreen() {
     );
   }
 
+  const alternative = pathway.alternative;
+  const showAlternative = useAlternative && !!alternative;
+  // With the alternative on, every session day uses the alternative exercises instead.
+  const schedule = showAlternative
+    ? pathway.exerciseIds.map((day) => (day.length > 0 ? alternative.exerciseIds : day))
+    : pathway.exerciseIds;
+
   return (
     <Sheet>
       <View style={styles.container}>
@@ -31,7 +43,7 @@ export default function PathwayScreen() {
           </Text>
         </View>
 
-        <View style={styles.content}>
+        <ScrollView contentContainerStyle={styles.content}>
           {pathway.description ? <Text style={styles.body}>{pathway.description}</Text> : null}
 
           <View style={styles.details}>
@@ -46,8 +58,26 @@ export default function PathwayScreen() {
             />
           </View>
 
-          <ExerciseCalendar rows={pathway.days} exerciseIds={pathway.exerciseIds} />
-        </View>
+          <ExerciseCalendar
+            rows={pathway.days}
+            height={CALENDAR_HEIGHT}
+            exerciseIds={schedule}
+            headerAction={
+              alternative ? (
+                <Pressable
+                  onPress={() => setUseAlternative((on) => !on)}
+                  accessibilityRole="switch"
+                  accessibilityState={{ checked: showAlternative }}
+                  style={[styles.toggle, showAlternative && styles.toggleOn]}
+                >
+                  <Text style={[styles.toggleText, showAlternative && styles.toggleTextOn]}>
+                    {alternative.label}
+                  </Text>
+                </Pressable>
+              ) : null
+            }
+          />
+        </ScrollView>
       </View>
     </Sheet>
   );
@@ -63,11 +93,23 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
   },
   name: { flex: 1, fontSize: 24, fontWeight: "700", color: colors.text },
-  content: { flex: 1, padding: spacing.md, gap: spacing.md },
+  content: { padding: spacing.md, gap: spacing.md },
   body: { fontSize: 16, lineHeight: 24, color: colors.text },
   details: { gap: spacing.sm / 2 },
   detail: { fontSize: 16, color: colors.text },
   label: { fontWeight: "700" },
+  // Matches the home page filter chips: pale when off, dark green when on.
+  toggle: {
+    borderRadius: 999,
+    paddingVertical: 4,
+    paddingHorizontal: spacing.sm,
+    backgroundColor: colors.overlaySoft,
+    borderWidth: 1,
+    borderColor: colors.overlayStrong,
+  },
+  toggleOn: { backgroundColor: colors.primary, borderColor: colors.primary },
+  toggleText: { fontSize: 12, fontWeight: "600", color: colors.text },
+  toggleTextOn: { color: colors.primaryText },
   notFound: {
     flex: 1,
     alignItems: "center",
