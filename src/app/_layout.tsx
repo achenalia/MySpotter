@@ -8,7 +8,7 @@ export default function RootLayout() {
         headerShown: false,
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: colors.text,
-        tabBarStyle: { backgroundColor: colors.background },
+        tabBarStyle: { display: "none" },
       }}
     >
       <Tabs.Screen

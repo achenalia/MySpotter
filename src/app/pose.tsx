@@ -17,6 +17,7 @@ import {
   useSpokenFeedback,
   type VoiceOption,
 } from "@/components/pose/useSpokenFeedback";
+import { colors } from "@/constants/theme";
 
 export default function PoseTest() {
   const [exercise, setExercise] = useState<Exercise>(exercises[0]);
@@ -143,7 +144,7 @@ export default function PoseTest() {
 }
 
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: "#111" },
+  screen: { flex: 1, backgroundColor: colors.dark },
 
   top: { padding: 12, gap: 6 },
   picker: { flexDirection: "row", gap: 8, flexWrap: "wrap" },
@@ -151,15 +152,15 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 14,
     borderRadius: 20,
-    backgroundColor: "#27272a",
+    backgroundColor: colors.darkTertiary,
   },
-  chipActive: { backgroundColor: "#4f46e5" },
-  voiceActive: { backgroundColor: "#16a34a" },
-  chipText: { color: "#fff", fontWeight: "600" },
+  chipActive: { backgroundColor: colors.primary },
+  voiceActive: { backgroundColor: colors.success },
+  chipText: { color: colors.white, fontWeight: "600" },
 
   voiceList: {
     maxHeight: 180,
-    backgroundColor: "#18181b",
+    backgroundColor: colors.darkSecondary,
     borderRadius: 10,
   },
   voiceRow: {
@@ -168,25 +169,25 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 12,
   },
-  voiceRowActive: { backgroundColor: "#27272a" },
-  voiceName: { color: "#fff", flexShrink: 1 },
-  voiceLang: { color: "#a1a1aa", marginLeft: 8 },
-  voiceEmpty: { color: "#a1a1aa", padding: 12 },
+  voiceRowActive: { backgroundColor: colors.darkTertiary },
+  voiceName: { color: colors.white, flexShrink: 1 },
+  voiceLang: { color: colors.subtle, marginLeft: 8 },
+  voiceEmpty: { color: colors.subtle, padding: 12 },
 
   instructionsLabel: {
-    color: "#a1a1aa",
+    color: colors.subtle,
     fontSize: 12,
     textTransform: "uppercase",
     letterSpacing: 1,
     marginTop: 4,
   },
-  instructions: { color: "#fff", fontSize: 16 },
+  instructions: { color: colors.white, fontSize: 16 },
 
-  camera: { flex: 1, backgroundColor: "#000" },
+  camera: { flex: 1, backgroundColor: colors.black },
 
   bottom: { padding: 12, alignItems: "center" },
-  reps: { fontSize: 48, fontWeight: "800", color: "#fff" },
-  phase: { color: "#d4d4d8" },
-  cue: { fontSize: 22, fontWeight: "700", color: "#f87171" },
-  good: { fontSize: 22, fontWeight: "700", color: "#4ade80" },
+  reps: { fontSize: 48, fontWeight: "800", color: colors.white },
+  phase: { color: colors.primaryText },
+  cue: { fontSize: 22, fontWeight: "700", color: colors.warning },
+  good: { fontSize: 22, fontWeight: "700", color: colors.success },
 });

@@ -49,9 +49,9 @@ const styles = StyleSheet.create({
   },
   divider: {
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: "#d4d4d8",
+    borderBottomColor: colors.border,
   },
   pressed: { opacity: 0.6 },
   label: { fontSize: 16, color: colors.text },
-  chevron: { fontSize: 22, color: "#a1a1aa" },
+  chevron: { fontSize: 22, color: colors.subtle },
 });
