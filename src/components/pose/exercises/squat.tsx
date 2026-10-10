@@ -11,9 +11,9 @@ export const squat: Exercise = {
   },
   repAngle: { joint: "knee", downBelow: 120, upAbove: 160 },
   repChecks: [
-    { joint: "knee", stat: "min", atMost: 100, message: "Try going a bit deeper" },
+    { joint: "knee", stat: "min", atMost: 100, message: "Try going a bit deeper." },
   ],
   checks: [
-    { joint: "torso", phase: "down", min: 50, message: "Keep your chest up" },
+    { joint: "torso", phase: "down", min: 50, message: "Keep your chest up." },
   ],
 };
