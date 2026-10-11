@@ -1,56 +1,137 @@
-# Welcome to your Expo app 👋
+# MySpotter
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+MySpotter is an exercise companion for older adults and people recovering from injuries. It offers guided exercise pathways, step-by-step exercise instructions with cited sources, safety guidance, and webcam-based rep counting with form feedback.
 
-## Get started
+Ky, Reese, Hamida, and Stephanie built it for the **WhitHack 2026** hackathon. The prompt came from **MultiCoreWare** in Walla Walla, WA.
 
-1. Install dependencies
+> **Health disclaimer:** MySpotter provides general information, not medical advice. The injury-recovery content tells users to exercise only with approval from their doctor or physical therapist and to stay within a pain-free range.
 
-   ```bash
-   npm install
-   ```
+## Features
 
-2. Start the app
+- **Browse and filter.** Search pathways and exercises, and filter them by:
+  - difficulty
+  - category: Balance, Strength, Flexibility, Mobility, Cardio
+  - focus: For Seniors, For Injury Recovery
+  - program length, using a min–max range slider
 
-   ```bash
-   npx expo start
-   ```
+  You can sort by length, difficulty, or name.
+- **Pathways.** Multi-week programs (4–6 weeks) with a day-by-day calendar of exercises and break days. They cover seven programs:
+  - balance
+  - upper-body strength
+  - flexibility
+  - knee and leg recovery
+  - shoulder and arm recovery
+  - hip recovery
+  - everyday injury prevention
 
-In the output, you'll find options to open the app in a
+  The Strength pathways have a **Back injury alternatives** toggle that swaps in gentler exercises.
+- **Exercise cards.** Each exercise has:
+  - a description and the equipment needed
+  - numbered instructions
+  - a video link
+  - links to its sources (NIA, NHS, AAOS, MedlinePlus, and others)
+  - a safety screen before you begin
+- **Pose tracking (web).** Webcam rep counting and live form feedback using MediaPipe Pose. Supported exercises: Squat, Push-up, Sit-to-Stand, and Gentle Elbow Bends. Optional spoken feedback is available.
+- **Therapy plan import.** Upload a therapy plan (PDF on web, or a text file), review the exercises and dosage pulled from it, and save the plan on the device.
+- **Daily affirmation.** A random quote in the top bar each time the app opens.
+- **Responsive layout.** A sidebar layout on desktop and a stacked layout with collapsible filters on phones.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Tech stack
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- [Expo](https://expo.dev) SDK 57 and React Native 0.86, with TypeScript
+- [Expo Router](https://docs.expo.dev/router/introduction/) for file-based navigation, with pop-up sheets for pathways and exercises
+- [MediaPipe Tasks Vision](https://ai.google.dev/edge/mediapipe/solutions/vision/pose_landmarker) for pose detection in the browser
+- `pdfjs-dist` for reading PDF therapy plans on web
+- `expo-speech`, `expo-document-picker`, `expo-web-browser`, `expo-image`, and AsyncStorage
 
-## Get a fresh project
+## Getting started
 
-When you're ready, run:
+You need [Node.js](https://nodejs.org) (LTS).
 
 ```bash
-npm run reset-project
+npm install
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+From the Expo CLI, press `w` to open the web version, or scan the QR code with [Expo Go](https://expo.dev/go) on your phone.
 
-### Other setup steps
+> Webcam pose tracking currently works **only in a web browser** (`npm run web`). On iOS and Android, the workout screen shows a message saying it isn't available yet.
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+Before committing, run the linter and type checker:
 
-## Learn more
+```bash
+npx expo lint
+npx tsc --noEmit
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+## Adding content
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+You can add exercises, pathways, and affirmations by editing JSON. No code changes are needed.
 
-## Join the community
+### Exercises and pathways: `src/data/content.json`
 
-Join our community of developers creating universal apps.
+Only `name` is required. Ids are generated from names, so "Push-Up" becomes `push-up`. Pathway schedules list exercise names by day: a single name, a list of names for several exercises that day, or `"rest"` for a break day.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```json
+{
+  "exercises": [
+    {
+      "name": "Wall Push-Ups",
+      "category": "Strength",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors"],
+      "description": "A gentle, standing version of a push-up done against a wall.",
+      "equipment": [],
+      "instructions": ["Face a wall...", "Lean forward..."],
+      "videoUrl": "https://www.youtube.com/watch?v=...",
+      "sources": [{ "title": "National Institute on Aging – ...", "url": "https://..." }],
+      "safety": "Move slowly and smoothly..."
+    }
+  ],
+  "pathways": [
+    {
+      "name": "Strength Foundations",
+      "description": "Upper-Body Strength · Track A ...",
+      "difficulty": "Beginner",
+      "specialties": ["For Seniors"],
+      "schedule": [["Wall Push-Ups", "Chair Dip"], "rest", "rest", ["Wall Push-Ups", "Chair Dip"], "rest", "rest", "rest"],
+      "alternatives": { "label": "Back injury alternatives", "exercises": ["Pendulum Swings"] }
+    }
+  ]
+}
+```
+
+- A pathway's length comes from its schedule.
+- A pathway's tags combine its own tags with tags taken from its exercises: every category among them, and any specialty that all of them share.
+- The allowed tag values are defined at the top of `src/data/content.ts`.
+- While the dev server is running, typos or unknown exercise names show a warning in the console.
+
+### Affirmations: `src/data/affirmations.json`
+
+A plain list of strings. One is picked at random each time the app opens.
+
+### Pose tracking for a new exercise: `src/components/pose/exercises/`
+
+Create a file like `sitToStand.tsx` that defines the joints to track and the angles that count as one rep. Then add it to the list in `index.tsx`.
+
+## Project structure
+
+```
+src/
+  app/                  Screens (Expo Router: every file is a route)
+    index.tsx           Home: filters, sort, and the Browse grid
+    pathway/[id].tsx    Pathway pop-up with calendar
+    exercise/[id]/      Exercise pop-up and its safety screen
+    pose.tsx            Webcam workout with rep counting
+    safety.tsx          General safety guidelines
+    therapy-plan/       Upload, review, confirm, and session screens
+  components/           Reusable UI (cards, calendar, tags, range slider, sheet)
+    pose/               Camera, pose analysis, and exercise detectors
+  data/                 content.json, affirmations.json, and their loaders
+  lib/                  Storage and therapy plan parsing
+  constants/            Theme colors, spacing, and the logo
+```
+
+## Team
+
+Built by **Ky**, **Reese**, **Hamida**, and **Stephanie** at WhitHack 2026, in response to a prompt from MultiCoreWare (Walla Walla, WA).
